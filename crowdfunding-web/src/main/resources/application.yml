@@ -1,0 +1,4 @@
+spring:
+  profiles:
+    active: pat
+# DEVOPS_HOME: /docker/var/conf

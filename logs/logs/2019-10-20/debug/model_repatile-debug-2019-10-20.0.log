@@ -1,0 +1,886 @@
+2019-10-20 16:01:11.459 DEBUG --- [main] cn.deercare.SpringBootMvnWebApplication Line:53  - Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-10-20 16:01:12.563 DEBUG --- [main] org.apache.ibatis.logging.LogFactory Line:105 - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2019-10-20 16:01:12.569 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:437 - Identified candidate component class: file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/cn/deercare/mapper/OrderMapper.class]
+2019-10-20 16:01:12.571 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:437 - Identified candidate component class: file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/cn/deercare/mapper/OrderWechatMapper.class]
+2019-10-20 16:01:12.582 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:437 - Identified candidate component class: file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/cn/deercare/mapper/ProjectHotelMapper.class]
+2019-10-20 16:01:12.582 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:437 - Identified candidate component class: file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/cn/deercare/mapper/ProjectIncomeMapper.class]
+2019-10-20 16:01:12.583 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:437 - Identified candidate component class: file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/cn/deercare/mapper/ProjectMapper.class]
+2019-10-20 16:01:12.586 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:437 - Identified candidate component class: file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/cn/deercare/mapper/ProjectPaymentMapper.class]
+2019-10-20 16:01:12.590 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:437 - Identified candidate component class: file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/cn/deercare/mapper/UserMapper.class]
+2019-10-20 16:01:12.591 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:437 - Identified candidate component class: file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/cn/deercare/mapper/UserProjectMapper.class]
+2019-10-20 16:01:12.592 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:437 - Identified candidate component class: file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/cn/deercare/mapper/UserWechatMapper.class]
+2019-10-20 16:01:12.596 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Creating MapperFactoryBean with name 'orderMapper' and 'cn.deercare.mapper.OrderMapper' mapperInterface
+2019-10-20 16:01:12.596 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2019-10-20 16:01:12.597 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Creating MapperFactoryBean with name 'orderWechatMapper' and 'cn.deercare.mapper.OrderWechatMapper' mapperInterface
+2019-10-20 16:01:12.597 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Enabling autowire by type for MapperFactoryBean with name 'orderWechatMapper'.
+2019-10-20 16:01:12.597 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Creating MapperFactoryBean with name 'projectHotelMapper' and 'cn.deercare.mapper.ProjectHotelMapper' mapperInterface
+2019-10-20 16:01:12.598 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Enabling autowire by type for MapperFactoryBean with name 'projectHotelMapper'.
+2019-10-20 16:01:12.600 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Creating MapperFactoryBean with name 'projectIncomeMapper' and 'cn.deercare.mapper.ProjectIncomeMapper' mapperInterface
+2019-10-20 16:01:12.601 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Enabling autowire by type for MapperFactoryBean with name 'projectIncomeMapper'.
+2019-10-20 16:01:12.601 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Creating MapperFactoryBean with name 'projectMapper' and 'cn.deercare.mapper.ProjectMapper' mapperInterface
+2019-10-20 16:01:12.603 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Enabling autowire by type for MapperFactoryBean with name 'projectMapper'.
+2019-10-20 16:01:12.603 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Creating MapperFactoryBean with name 'projectPaymentMapper' and 'cn.deercare.mapper.ProjectPaymentMapper' mapperInterface
+2019-10-20 16:01:12.603 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Enabling autowire by type for MapperFactoryBean with name 'projectPaymentMapper'.
+2019-10-20 16:01:12.604 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Creating MapperFactoryBean with name 'userMapper' and 'cn.deercare.mapper.UserMapper' mapperInterface
+2019-10-20 16:01:12.606 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+2019-10-20 16:01:12.607 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Creating MapperFactoryBean with name 'userProjectMapper' and 'cn.deercare.mapper.UserProjectMapper' mapperInterface
+2019-10-20 16:01:12.607 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Enabling autowire by type for MapperFactoryBean with name 'userProjectMapper'.
+2019-10-20 16:01:12.608 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Creating MapperFactoryBean with name 'userWechatMapper' and 'cn.deercare.mapper.UserWechatMapper' mapperInterface
+2019-10-20 16:01:12.608 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Enabling autowire by type for MapperFactoryBean with name 'userWechatMapper'.
+2019-10-20 16:01:13.489 DEBUG --- [main] com.github.xiaoymin.swaggerbootstrapui.configuration.SecurityConfiguration Line:39  - swagger.production:null
+2019-10-20 16:01:13.904 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Registered plugin: 'com.github.pagehelper.PageHelper@38bb9d7a'
+2019-10-20 16:01:14.081 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.insert
+2019-10-20 16:01:14.087 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.delete
+2019-10-20 16:01:14.090 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.deleteByMap
+2019-10-20 16:01:14.111 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.deleteById
+2019-10-20 16:01:14.114 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.deleteBatchIds
+2019-10-20 16:01:14.121 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.update
+2019-10-20 16:01:14.128 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.updateById
+2019-10-20 16:01:14.129 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectById
+2019-10-20 16:01:14.131 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectBatchIds
+2019-10-20 16:01:14.132 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectByMap
+2019-10-20 16:01:14.136 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectOne
+2019-10-20 16:01:14.143 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectCount
+2019-10-20 16:01:14.146 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectMaps
+2019-10-20 16:01:14.149 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectMapsPage
+2019-10-20 16:01:14.152 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectObjs
+2019-10-20 16:01:14.158 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectList
+2019-10-20 16:01:14.160 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectPage
+2019-10-20 16:01:14.161 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/OrderMapper.xml]'
+2019-10-20 16:01:14.193 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.insert
+2019-10-20 16:01:14.196 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.delete
+2019-10-20 16:01:14.197 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.deleteByMap
+2019-10-20 16:01:14.198 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.deleteById
+2019-10-20 16:01:14.200 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.deleteBatchIds
+2019-10-20 16:01:14.202 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.update
+2019-10-20 16:01:14.204 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.updateById
+2019-10-20 16:01:14.204 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectById
+2019-10-20 16:01:14.205 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectBatchIds
+2019-10-20 16:01:14.207 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectByMap
+2019-10-20 16:01:14.209 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectOne
+2019-10-20 16:01:14.211 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectCount
+2019-10-20 16:01:14.213 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectMaps
+2019-10-20 16:01:14.215 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectMapsPage
+2019-10-20 16:01:14.216 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectObjs
+2019-10-20 16:01:14.218 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectList
+2019-10-20 16:01:14.220 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectPage
+2019-10-20 16:01:14.220 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/OrderWechatMapper.xml]'
+2019-10-20 16:01:14.226 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/ProjectHotelMapper.xml]'
+2019-10-20 16:01:14.234 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.insert
+2019-10-20 16:01:14.236 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.delete
+2019-10-20 16:01:14.238 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.deleteByMap
+2019-10-20 16:01:14.240 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.deleteById
+2019-10-20 16:01:14.241 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.deleteBatchIds
+2019-10-20 16:01:14.243 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.update
+2019-10-20 16:01:14.245 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.updateById
+2019-10-20 16:01:14.246 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectById
+2019-10-20 16:01:14.248 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectBatchIds
+2019-10-20 16:01:14.250 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectByMap
+2019-10-20 16:01:14.252 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectOne
+2019-10-20 16:01:14.254 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectCount
+2019-10-20 16:01:14.256 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectMaps
+2019-10-20 16:01:14.258 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectMapsPage
+2019-10-20 16:01:14.260 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectObjs
+2019-10-20 16:01:14.261 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectList
+2019-10-20 16:01:14.263 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectPage
+2019-10-20 16:01:14.263 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/ProjectIncomeMapper.xml]'
+2019-10-20 16:01:14.269 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/ProjectMapper.xml]'
+2019-10-20 16:01:14.276 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.insert
+2019-10-20 16:01:14.278 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.delete
+2019-10-20 16:01:14.279 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.deleteByMap
+2019-10-20 16:01:14.281 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.deleteById
+2019-10-20 16:01:14.282 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.deleteBatchIds
+2019-10-20 16:01:14.284 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.update
+2019-10-20 16:01:14.286 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.updateById
+2019-10-20 16:01:14.286 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectById
+2019-10-20 16:01:14.290 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectBatchIds
+2019-10-20 16:01:14.291 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectByMap
+2019-10-20 16:01:14.292 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectOne
+2019-10-20 16:01:14.294 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectCount
+2019-10-20 16:01:14.296 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectMaps
+2019-10-20 16:01:14.297 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectMapsPage
+2019-10-20 16:01:14.299 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectObjs
+2019-10-20 16:01:14.300 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectList
+2019-10-20 16:01:14.301 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectPage
+2019-10-20 16:01:14.302 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/ProjectPaymentMapper.xml]'
+2019-10-20 16:01:14.306 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/UserMapper.xml]'
+2019-10-20 16:01:14.313 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.insert
+2019-10-20 16:01:14.314 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.delete
+2019-10-20 16:01:14.315 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.deleteByMap
+2019-10-20 16:01:14.316 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.deleteById
+2019-10-20 16:01:14.317 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.deleteBatchIds
+2019-10-20 16:01:14.319 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.update
+2019-10-20 16:01:14.320 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.updateById
+2019-10-20 16:01:14.321 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectById
+2019-10-20 16:01:14.323 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectBatchIds
+2019-10-20 16:01:14.324 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectByMap
+2019-10-20 16:01:14.326 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectOne
+2019-10-20 16:01:14.328 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectCount
+2019-10-20 16:01:14.330 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectMaps
+2019-10-20 16:01:14.331 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectMapsPage
+2019-10-20 16:01:14.333 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectObjs
+2019-10-20 16:01:14.338 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectList
+2019-10-20 16:01:14.340 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectPage
+2019-10-20 16:01:14.341 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/UserProjectMapper.xml]'
+2019-10-20 16:01:14.370 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/UserWechatMapper.xml]'
+2019-10-20 16:01:14.388 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.insert
+2019-10-20 16:01:14.391 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.delete
+2019-10-20 16:01:14.393 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.deleteByMap
+2019-10-20 16:01:14.394 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.deleteById
+2019-10-20 16:01:14.395 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.deleteBatchIds
+2019-10-20 16:01:14.401 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.update
+2019-10-20 16:01:14.404 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.updateById
+2019-10-20 16:01:14.405 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectById
+2019-10-20 16:01:14.407 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectBatchIds
+2019-10-20 16:01:14.409 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectByMap
+2019-10-20 16:01:14.411 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectOne
+2019-10-20 16:01:14.412 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectCount
+2019-10-20 16:01:14.417 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectMaps
+2019-10-20 16:01:14.422 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectMapsPage
+2019-10-20 16:01:14.424 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectObjs
+2019-10-20 16:01:14.426 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectList
+2019-10-20 16:01:14.428 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectPage
+2019-10-20 16:01:14.428 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/WechatUserMapper.xml]'
+2019-10-20 16:01:14.544 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.list
+2019-10-20 16:01:14.563 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.getProjectAccountAmount
+2019-10-20 16:01:14.567 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.listByUser
+2019-10-20 16:01:14.568 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.getById
+2019-10-20 16:01:14.571 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.insert
+2019-10-20 16:01:14.573 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.delete
+2019-10-20 16:01:14.578 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.deleteByMap
+2019-10-20 16:01:14.580 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.deleteById
+2019-10-20 16:01:14.584 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.deleteBatchIds
+2019-10-20 16:01:14.586 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.update
+2019-10-20 16:01:14.587 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.updateById
+2019-10-20 16:01:14.588 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectById
+2019-10-20 16:01:14.590 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectBatchIds
+2019-10-20 16:01:14.595 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectByMap
+2019-10-20 16:01:14.600 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectOne
+2019-10-20 16:01:14.607 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectCount
+2019-10-20 16:01:14.614 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectMaps
+2019-10-20 16:01:14.618 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectMapsPage
+2019-10-20 16:01:14.621 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectObjs
+2019-10-20 16:01:14.624 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectList
+2019-10-20 16:01:14.626 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectPage
+2019-10-20 16:01:14.650 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.insert
+2019-10-20 16:01:14.653 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.delete
+2019-10-20 16:01:14.654 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.deleteByMap
+2019-10-20 16:01:14.659 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.deleteById
+2019-10-20 16:01:14.660 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.deleteBatchIds
+2019-10-20 16:01:14.663 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.update
+2019-10-20 16:01:14.665 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.updateById
+2019-10-20 16:01:14.665 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectById
+2019-10-20 16:01:14.667 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectBatchIds
+2019-10-20 16:01:14.668 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectByMap
+2019-10-20 16:01:14.673 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectOne
+2019-10-20 16:01:14.684 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectCount
+2019-10-20 16:01:14.686 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectMaps
+2019-10-20 16:01:14.689 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectMapsPage
+2019-10-20 16:01:14.692 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectObjs
+2019-10-20 16:01:14.695 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectList
+2019-10-20 16:01:14.698 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectPage
+2019-10-20 16:01:14.735 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.listByProject
+2019-10-20 16:01:14.738 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.insert
+2019-10-20 16:01:14.739 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.delete
+2019-10-20 16:01:14.740 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.deleteByMap
+2019-10-20 16:01:14.742 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.deleteById
+2019-10-20 16:01:14.743 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.deleteBatchIds
+2019-10-20 16:01:14.745 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.update
+2019-10-20 16:01:14.746 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.updateById
+2019-10-20 16:01:14.747 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectById
+2019-10-20 16:01:14.748 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectBatchIds
+2019-10-20 16:01:14.749 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectByMap
+2019-10-20 16:01:14.750 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectOne
+2019-10-20 16:01:14.752 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectCount
+2019-10-20 16:01:14.754 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectMaps
+2019-10-20 16:01:14.755 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectMapsPage
+2019-10-20 16:01:14.757 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectObjs
+2019-10-20 16:01:14.758 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectList
+2019-10-20 16:01:14.760 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectPage
+2019-10-20 16:02:08.232 DEBUG --- [main] cn.deercare.SpringBootMvnWebApplication Line:53  - Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-10-20 16:02:09.509 DEBUG --- [main] org.apache.ibatis.logging.LogFactory Line:105 - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2019-10-20 16:02:09.512 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:437 - Identified candidate component class: file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/cn/deercare/mapper/OrderMapper.class]
+2019-10-20 16:02:09.513 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:437 - Identified candidate component class: file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/cn/deercare/mapper/OrderWechatMapper.class]
+2019-10-20 16:02:09.513 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:437 - Identified candidate component class: file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/cn/deercare/mapper/ProjectHotelMapper.class]
+2019-10-20 16:02:09.513 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:437 - Identified candidate component class: file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/cn/deercare/mapper/ProjectIncomeMapper.class]
+2019-10-20 16:02:09.514 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:437 - Identified candidate component class: file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/cn/deercare/mapper/ProjectMapper.class]
+2019-10-20 16:02:09.514 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:437 - Identified candidate component class: file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/cn/deercare/mapper/ProjectPaymentMapper.class]
+2019-10-20 16:02:09.514 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:437 - Identified candidate component class: file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/cn/deercare/mapper/UserMapper.class]
+2019-10-20 16:02:09.514 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:437 - Identified candidate component class: file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/cn/deercare/mapper/UserProjectMapper.class]
+2019-10-20 16:02:09.515 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:437 - Identified candidate component class: file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/cn/deercare/mapper/UserWechatMapper.class]
+2019-10-20 16:02:09.516 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Creating MapperFactoryBean with name 'orderMapper' and 'cn.deercare.mapper.OrderMapper' mapperInterface
+2019-10-20 16:02:09.517 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2019-10-20 16:02:09.517 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Creating MapperFactoryBean with name 'orderWechatMapper' and 'cn.deercare.mapper.OrderWechatMapper' mapperInterface
+2019-10-20 16:02:09.517 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Enabling autowire by type for MapperFactoryBean with name 'orderWechatMapper'.
+2019-10-20 16:02:09.518 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Creating MapperFactoryBean with name 'projectHotelMapper' and 'cn.deercare.mapper.ProjectHotelMapper' mapperInterface
+2019-10-20 16:02:09.518 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Enabling autowire by type for MapperFactoryBean with name 'projectHotelMapper'.
+2019-10-20 16:02:09.518 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Creating MapperFactoryBean with name 'projectIncomeMapper' and 'cn.deercare.mapper.ProjectIncomeMapper' mapperInterface
+2019-10-20 16:02:09.518 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Enabling autowire by type for MapperFactoryBean with name 'projectIncomeMapper'.
+2019-10-20 16:02:09.519 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Creating MapperFactoryBean with name 'projectMapper' and 'cn.deercare.mapper.ProjectMapper' mapperInterface
+2019-10-20 16:02:09.519 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Enabling autowire by type for MapperFactoryBean with name 'projectMapper'.
+2019-10-20 16:02:09.519 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Creating MapperFactoryBean with name 'projectPaymentMapper' and 'cn.deercare.mapper.ProjectPaymentMapper' mapperInterface
+2019-10-20 16:02:09.520 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Enabling autowire by type for MapperFactoryBean with name 'projectPaymentMapper'.
+2019-10-20 16:02:09.520 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Creating MapperFactoryBean with name 'userMapper' and 'cn.deercare.mapper.UserMapper' mapperInterface
+2019-10-20 16:02:09.520 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+2019-10-20 16:02:09.521 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Creating MapperFactoryBean with name 'userProjectMapper' and 'cn.deercare.mapper.UserProjectMapper' mapperInterface
+2019-10-20 16:02:09.521 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Enabling autowire by type for MapperFactoryBean with name 'userProjectMapper'.
+2019-10-20 16:02:09.521 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Creating MapperFactoryBean with name 'userWechatMapper' and 'cn.deercare.mapper.UserWechatMapper' mapperInterface
+2019-10-20 16:02:09.521 DEBUG --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:49  - Enabling autowire by type for MapperFactoryBean with name 'userWechatMapper'.
+2019-10-20 16:02:10.437 DEBUG --- [main] com.github.xiaoymin.swaggerbootstrapui.configuration.SecurityConfiguration Line:39  - swagger.production:null
+2019-10-20 16:02:10.845 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Registered plugin: 'com.github.pagehelper.PageHelper@4c6a4ffd'
+2019-10-20 16:02:11.022 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.insert
+2019-10-20 16:02:11.028 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.delete
+2019-10-20 16:02:11.030 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.deleteByMap
+2019-10-20 16:02:11.048 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.deleteById
+2019-10-20 16:02:11.050 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.deleteBatchIds
+2019-10-20 16:02:11.060 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.update
+2019-10-20 16:02:11.064 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.updateById
+2019-10-20 16:02:11.065 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectById
+2019-10-20 16:02:11.066 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectBatchIds
+2019-10-20 16:02:11.069 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectByMap
+2019-10-20 16:02:11.072 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectOne
+2019-10-20 16:02:11.074 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectCount
+2019-10-20 16:02:11.076 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectMaps
+2019-10-20 16:02:11.079 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectMapsPage
+2019-10-20 16:02:11.081 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectObjs
+2019-10-20 16:02:11.083 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectList
+2019-10-20 16:02:11.085 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderMapper.selectPage
+2019-10-20 16:02:11.086 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/OrderMapper.xml]'
+2019-10-20 16:02:11.093 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.insert
+2019-10-20 16:02:11.096 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.delete
+2019-10-20 16:02:11.097 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.deleteByMap
+2019-10-20 16:02:11.098 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.deleteById
+2019-10-20 16:02:11.100 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.deleteBatchIds
+2019-10-20 16:02:11.102 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.update
+2019-10-20 16:02:11.103 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.updateById
+2019-10-20 16:02:11.104 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectById
+2019-10-20 16:02:11.107 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectBatchIds
+2019-10-20 16:02:11.108 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectByMap
+2019-10-20 16:02:11.110 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectOne
+2019-10-20 16:02:11.113 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectCount
+2019-10-20 16:02:11.115 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectMaps
+2019-10-20 16:02:11.118 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectMapsPage
+2019-10-20 16:02:11.120 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectObjs
+2019-10-20 16:02:11.122 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectList
+2019-10-20 16:02:11.123 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.OrderWechatMapper.selectPage
+2019-10-20 16:02:11.124 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/OrderWechatMapper.xml]'
+2019-10-20 16:02:11.129 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/ProjectHotelMapper.xml]'
+2019-10-20 16:02:11.135 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.insert
+2019-10-20 16:02:11.136 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.delete
+2019-10-20 16:02:11.137 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.deleteByMap
+2019-10-20 16:02:11.139 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.deleteById
+2019-10-20 16:02:11.140 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.deleteBatchIds
+2019-10-20 16:02:11.141 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.update
+2019-10-20 16:02:11.143 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.updateById
+2019-10-20 16:02:11.143 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectById
+2019-10-20 16:02:11.144 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectBatchIds
+2019-10-20 16:02:11.148 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectByMap
+2019-10-20 16:02:11.150 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectOne
+2019-10-20 16:02:11.152 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectCount
+2019-10-20 16:02:11.153 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectMaps
+2019-10-20 16:02:11.154 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectMapsPage
+2019-10-20 16:02:11.156 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectObjs
+2019-10-20 16:02:11.157 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectList
+2019-10-20 16:02:11.158 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectIncomeMapper.selectPage
+2019-10-20 16:02:11.159 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/ProjectIncomeMapper.xml]'
+2019-10-20 16:02:11.164 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/ProjectMapper.xml]'
+2019-10-20 16:02:11.171 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.insert
+2019-10-20 16:02:11.173 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.delete
+2019-10-20 16:02:11.174 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.deleteByMap
+2019-10-20 16:02:11.178 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.deleteById
+2019-10-20 16:02:11.179 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.deleteBatchIds
+2019-10-20 16:02:11.181 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.update
+2019-10-20 16:02:11.182 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.updateById
+2019-10-20 16:02:11.183 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectById
+2019-10-20 16:02:11.184 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectBatchIds
+2019-10-20 16:02:11.185 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectByMap
+2019-10-20 16:02:11.188 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectOne
+2019-10-20 16:02:11.189 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectCount
+2019-10-20 16:02:11.191 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectMaps
+2019-10-20 16:02:11.193 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectMapsPage
+2019-10-20 16:02:11.194 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectObjs
+2019-10-20 16:02:11.195 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectList
+2019-10-20 16:02:11.197 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectPaymentMapper.selectPage
+2019-10-20 16:02:11.197 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/ProjectPaymentMapper.xml]'
+2019-10-20 16:02:11.202 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/UserMapper.xml]'
+2019-10-20 16:02:11.207 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.insert
+2019-10-20 16:02:11.209 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.delete
+2019-10-20 16:02:11.210 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.deleteByMap
+2019-10-20 16:02:11.211 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.deleteById
+2019-10-20 16:02:11.212 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.deleteBatchIds
+2019-10-20 16:02:11.213 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.update
+2019-10-20 16:02:11.215 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.updateById
+2019-10-20 16:02:11.215 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectById
+2019-10-20 16:02:11.216 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectBatchIds
+2019-10-20 16:02:11.218 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectByMap
+2019-10-20 16:02:11.219 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectOne
+2019-10-20 16:02:11.221 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectCount
+2019-10-20 16:02:11.222 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectMaps
+2019-10-20 16:02:11.224 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectMapsPage
+2019-10-20 16:02:11.226 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectObjs
+2019-10-20 16:02:11.227 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectList
+2019-10-20 16:02:11.229 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserProjectMapper.selectPage
+2019-10-20 16:02:11.230 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/UserProjectMapper.xml]'
+2019-10-20 16:02:11.234 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/UserWechatMapper.xml]'
+2019-10-20 16:02:11.246 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.insert
+2019-10-20 16:02:11.248 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.delete
+2019-10-20 16:02:11.249 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.deleteByMap
+2019-10-20 16:02:11.251 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.deleteById
+2019-10-20 16:02:11.252 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.deleteBatchIds
+2019-10-20 16:02:11.255 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.update
+2019-10-20 16:02:11.257 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.updateById
+2019-10-20 16:02:11.257 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectById
+2019-10-20 16:02:11.263 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectBatchIds
+2019-10-20 16:02:11.264 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectByMap
+2019-10-20 16:02:11.266 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectOne
+2019-10-20 16:02:11.268 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectCount
+2019-10-20 16:02:11.270 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectMaps
+2019-10-20 16:02:11.272 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectMapsPage
+2019-10-20 16:02:11.274 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectObjs
+2019-10-20 16:02:11.277 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectList
+2019-10-20 16:02:11.280 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserWechatMapper.selectPage
+2019-10-20 16:02:11.281 DEBUG --- [main] com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean Line:49  - Parsed mapper file: 'file [/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-core/target/classes/mapping/WechatUserMapper.xml]'
+2019-10-20 16:02:11.420 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.list
+2019-10-20 16:02:11.424 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.listByUser
+2019-10-20 16:02:11.425 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.getById
+2019-10-20 16:02:11.425 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.getProjectAccountAmount
+2019-10-20 16:02:11.427 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.insert
+2019-10-20 16:02:11.428 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.delete
+2019-10-20 16:02:11.429 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.deleteByMap
+2019-10-20 16:02:11.430 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.deleteById
+2019-10-20 16:02:11.431 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.deleteBatchIds
+2019-10-20 16:02:11.432 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.update
+2019-10-20 16:02:11.434 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.updateById
+2019-10-20 16:02:11.434 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectById
+2019-10-20 16:02:11.435 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectBatchIds
+2019-10-20 16:02:11.436 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectByMap
+2019-10-20 16:02:11.437 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectOne
+2019-10-20 16:02:11.438 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectCount
+2019-10-20 16:02:11.440 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectMaps
+2019-10-20 16:02:11.441 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectMapsPage
+2019-10-20 16:02:11.442 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectObjs
+2019-10-20 16:02:11.443 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectList
+2019-10-20 16:02:11.444 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectMapper.selectPage
+2019-10-20 16:02:11.451 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.insert
+2019-10-20 16:02:11.452 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.delete
+2019-10-20 16:02:11.453 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.deleteByMap
+2019-10-20 16:02:11.454 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.deleteById
+2019-10-20 16:02:11.455 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.deleteBatchIds
+2019-10-20 16:02:11.462 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.update
+2019-10-20 16:02:11.464 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.updateById
+2019-10-20 16:02:11.464 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectById
+2019-10-20 16:02:11.465 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectBatchIds
+2019-10-20 16:02:11.466 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectByMap
+2019-10-20 16:02:11.467 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectOne
+2019-10-20 16:02:11.469 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectCount
+2019-10-20 16:02:11.471 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectMaps
+2019-10-20 16:02:11.472 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectMapsPage
+2019-10-20 16:02:11.476 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectObjs
+2019-10-20 16:02:11.477 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectList
+2019-10-20 16:02:11.479 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.ProjectHotelMapper.selectPage
+2019-10-20 16:02:11.533 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.listByProject
+2019-10-20 16:02:11.537 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.insert
+2019-10-20 16:02:11.539 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.delete
+2019-10-20 16:02:11.540 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.deleteByMap
+2019-10-20 16:02:11.541 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.deleteById
+2019-10-20 16:02:11.544 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.deleteBatchIds
+2019-10-20 16:02:11.545 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.update
+2019-10-20 16:02:11.546 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.updateById
+2019-10-20 16:02:11.546 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectById
+2019-10-20 16:02:11.547 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectBatchIds
+2019-10-20 16:02:11.549 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectByMap
+2019-10-20 16:02:11.550 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectOne
+2019-10-20 16:02:11.552 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectCount
+2019-10-20 16:02:11.554 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectMaps
+2019-10-20 16:02:11.557 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectMapsPage
+2019-10-20 16:02:11.558 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectObjs
+2019-10-20 16:02:11.559 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectList
+2019-10-20 16:02:11.561 DEBUG --- [main] com.baomidou.mybatisplus.core.MybatisConfiguration Line:80  - addMappedStatement: cn.deercare.mapper.UserMapper.selectPage
+2019-10-20 16:02:12.480 DEBUG --- [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:54  - initialising the handler methods
+2019-10-20 16:02:12.534 DEBUG --- [main] org.hibernate.validator.internal.engine.resolver.TraversableResolvers Line:60  - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2019-10-20 16:02:12.534 DEBUG --- [main] org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator Line:89  - Loaded expression factory via original TCCL
+2019-10-20 16:02:12.544 DEBUG --- [main] org.hibernate.validator.internal.engine.resolver.TraversableResolvers Line:60  - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2019-10-20 16:02:12.545 DEBUG --- [main] org.hibernate.validator.internal.engine.ConfigurationImpl Line:148 - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+2019-10-20 16:02:12.545 DEBUG --- [main] org.hibernate.validator.internal.engine.ConfigurationImpl Line:180 - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+2019-10-20 16:02:12.547 DEBUG --- [main] org.hibernate.validator.internal.engine.ConfigurationImpl Line:194 - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+2019-10-20 16:02:12.548 DEBUG --- [main] org.hibernate.validator.internal.xml.config.ValidationXmlParser Line:120 - Trying to load META-INF/validation.xml for XML based Validator configuration.
+2019-10-20 16:02:12.548 DEBUG --- [main] org.hibernate.validator.internal.xml.config.ResourceLoaderHelper Line:53  - Trying to load META-INF/validation.xml via user class loader
+2019-10-20 16:02:12.549 DEBUG --- [main] org.hibernate.validator.internal.xml.config.ResourceLoaderHelper Line:60  - Trying to load META-INF/validation.xml via TCCL
+2019-10-20 16:02:12.549 DEBUG --- [main] org.hibernate.validator.internal.xml.config.ResourceLoaderHelper Line:66  - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2019-10-20 16:02:12.549 DEBUG --- [main] org.hibernate.validator.internal.xml.config.ValidationXmlParser Line:127 - No META-INF/validation.xml found. Using annotation based configuration only.
+2019-10-20 16:02:12.553 DEBUG --- [main] org.hibernate.validator.internal.engine.ValidatorFactoryImpl Line:578 - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2019-10-20 16:02:12.554 DEBUG --- [main] org.hibernate.validator.internal.engine.ValidatorFactoryImpl Line:579 - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+2019-10-20 16:02:12.554 DEBUG --- [main] org.hibernate.validator.internal.engine.ValidatorFactoryImpl Line:580 - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2019-10-20 16:02:12.554 DEBUG --- [main] org.hibernate.validator.internal.engine.ValidatorFactoryImpl Line:581 - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2019-10-20 16:02:12.554 DEBUG --- [main] org.hibernate.validator.internal.engine.ValidatorFactoryImpl Line:582 - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2019-10-20 16:02:13.258 DEBUG --- [main] springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner Line:50  - Total number of request handlers 14
+2019-10-20 16:02:13.259 DEBUG --- [main] springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner Line:52  - Adding key: [/error], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/error], supportedMethods=[], supportedMediaTypes=[], producibleMediaTypes=[]}}
+2019-10-20 16:02:13.261 DEBUG --- [main] springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner Line:52  - Adding key: [/error], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/error], supportedMethods=[], supportedMediaTypes=[], producibleMediaTypes=[text/html]}}
+2019-10-20 16:02:13.262 DEBUG --- [main] springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner Line:52  - Adding key: [/order-wechat/notify], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/order-wechat/notify], supportedMethods=[POST], supportedMediaTypes=[], producibleMediaTypes=[]}}
+2019-10-20 16:02:13.262 DEBUG --- [main] springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner Line:52  - Adding key: [/project-income/input/{id}/{amount}], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/project-income/input/{id}/{amount}], supportedMethods=[GET], supportedMediaTypes=[], producibleMediaTypes=[]}}
+2019-10-20 16:02:13.263 DEBUG --- [main] springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner Line:52  - Adding key: [/project/list/{page}], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/project/list/{page}], supportedMethods=[GET], supportedMediaTypes=[], producibleMediaTypes=[]}}
+2019-10-20 16:02:13.263 DEBUG --- [main] springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner Line:52  - Adding key: [/project/listByUser/{page}], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/project/listByUser/{page}], supportedMethods=[GET], supportedMediaTypes=[], producibleMediaTypes=[]}}
+2019-10-20 16:02:13.263 DEBUG --- [main] springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner Line:52  - Adding key: [/project/nextState/{id}], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/project/nextState/{id}], supportedMethods=[GET], supportedMediaTypes=[], producibleMediaTypes=[]}}
+2019-10-20 16:02:13.263 DEBUG --- [main] springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner Line:52  - Adding key: [/project/pay/{id}/{amount}], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/project/pay/{id}/{amount}], supportedMethods=[GET], supportedMediaTypes=[], producibleMediaTypes=[]}}
+2019-10-20 16:02:13.263 DEBUG --- [main] springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner Line:52  - Adding key: [/swagger-resources-ext], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/swagger-resources-ext], supportedMethods=[], supportedMediaTypes=[], producibleMediaTypes=[]}}
+2019-10-20 16:02:13.263 DEBUG --- [main] springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner Line:52  - Adding key: [/swagger-resources/configuration/security], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/swagger-resources/configuration/security], supportedMethods=[], supportedMediaTypes=[], producibleMediaTypes=[]}}
+2019-10-20 16:02:13.263 DEBUG --- [main] springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner Line:52  - Adding key: [/swagger-resources/configuration/ui], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/swagger-resources/configuration/ui], supportedMethods=[], supportedMediaTypes=[], producibleMediaTypes=[]}}
+2019-10-20 16:02:13.263 DEBUG --- [main] springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner Line:52  - Adding key: [/swagger-resources], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/swagger-resources], supportedMethods=[], supportedMediaTypes=[], producibleMediaTypes=[]}}
+2019-10-20 16:02:13.264 DEBUG --- [main] springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner Line:52  - Adding key: [/user/login], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/user/login], supportedMethods=[POST], supportedMediaTypes=[], producibleMediaTypes=[]}}
+2019-10-20 16:02:13.264 DEBUG --- [main] springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner Line:52  - Adding key: [/v2/api-docs-ext], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/v2/api-docs-ext], supportedMethods=[GET], supportedMediaTypes=[], producibleMediaTypes=[application/json, application/hal+json]}}
+2019-10-20 16:02:13.284 DEBUG --- [main] springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner Line:58  - Combined number of request handlers 14
+2019-10-20 16:02:13.308 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationModelsProvider Line:76  - Adding return parameter of type Ljava/lang/Object;
+2019-10-20 16:02:13.309 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationModelsProvider Line:83  - Reading parameters models for handlerMethod |list|
+2019-10-20 16:02:13.310 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationModelsProvider Line:94  - Finished reading parameters models for handlerMethod |list|
+2019-10-20 16:02:13.311 DEBUG --- [main] springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider Line:77  - Adding return parameter of type Lcn/deercare/vo/RestResult;
+2019-10-20 16:02:13.312 DEBUG --- [main] springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider Line:84  - Reading parameters models for handlerMethod |list|
+2019-10-20 16:02:13.331 DEBUG --- [main] springfox.documentation.schema.DefaultModelProvider Line:86  - Skipping model of type Ljava/lang/Object; as its either a container type, map, enum or base type, or its already been handled
+2019-10-20 16:02:13.334 DEBUG --- [main] springfox.documentation.spring.web.scanners.ApiModelReader Line:76  - Did not find any parameter models for java.lang.Object
+2019-10-20 16:02:13.335 DEBUG --- [main] springfox.documentation.schema.DefaultModelDependencyProvider Line:113 - Marking base type Ljava/lang/Object; as seen
+2019-10-20 16:02:13.371 DEBUG --- [main] springfox.documentation.schema.property.OptimizedModelPropertiesProvider Line:127 - Reading property resultCode
+2019-10-20 16:02:13.378 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getResultCode
+2019-10-20 16:02:13.380 DEBUG --- [main] springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy Line:57  - Name 'resultCode' renamed to 'resultCode'
+2019-10-20 16:02:13.380 DEBUG --- [main] springfox.documentation.schema.property.OptimizedModelPropertiesProvider Line:315 - Adding property resultCode to model
+2019-10-20 16:02:13.382 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getResultCode
+2019-10-20 16:02:13.383 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getResultCode
+2019-10-20 16:02:13.383 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getResultCode
+2019-10-20 16:02:13.390 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getResultCode
+2019-10-20 16:02:13.401 DEBUG --- [main] springfox.documentation.schema.property.OptimizedModelPropertiesProvider Line:127 - Reading property message
+2019-10-20 16:02:13.401 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getMessage
+2019-10-20 16:02:13.402 DEBUG --- [main] springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy Line:57  - Name 'message' renamed to 'message'
+2019-10-20 16:02:13.402 DEBUG --- [main] springfox.documentation.schema.property.OptimizedModelPropertiesProvider Line:315 - Adding property message to model
+2019-10-20 16:02:13.402 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getMessage
+2019-10-20 16:02:13.403 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getMessage
+2019-10-20 16:02:13.403 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getMessage
+2019-10-20 16:02:13.403 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getMessage
+2019-10-20 16:02:13.404 DEBUG --- [main] springfox.documentation.schema.property.OptimizedModelPropertiesProvider Line:127 - Reading property data
+2019-10-20 16:02:13.404 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getData
+2019-10-20 16:02:13.404 DEBUG --- [main] springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy Line:57  - Name 'data' renamed to 'data'
+2019-10-20 16:02:13.404 DEBUG --- [main] springfox.documentation.schema.property.OptimizedModelPropertiesProvider Line:315 - Adding property data to model
+2019-10-20 16:02:13.405 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getData
+2019-10-20 16:02:13.405 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getData
+2019-10-20 16:02:13.405 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getData
+2019-10-20 16:02:13.406 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getData
+2019-10-20 16:02:13.416 DEBUG --- [main] springfox.documentation.schema.DefaultModelProvider Line:101 - Inferred 3 properties. Properties found data, message, resultCode
+2019-10-20 16:02:13.422 DEBUG --- [main] springfox.documentation.spring.web.scanners.ApiModelReader Line:71  - Generated parameter model id: result, name: result, schema: {} models
+2019-10-20 16:02:13.423 DEBUG --- [main] springfox.documentation.spring.web.scanners.ApiModelReader Line:89  - Adding a new model with key result
+2019-10-20 16:02:13.450 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationResponseClassReader Line:59  - Setting spring response class to: object
+2019-10-20 16:02:13.454 DEBUG --- [main] springfox.documentation.swagger.readers.operation.VendorExtensionsReader Line:59  - Extension count 1 for method list
+2019-10-20 16:02:13.455 DEBUG --- [main] springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader Line:74  - Setting response class to:result
+2019-10-20 16:02:13.490 DEBUG --- [main] springfox.documentation.swagger.readers.operation.OperationAuthReader Line:103 - Authorization count 0 for method list
+2019-10-20 16:02:13.530 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationModelsProvider Line:76  - Adding return parameter of type Ljava/lang/Object;
+2019-10-20 16:02:13.531 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationModelsProvider Line:83  - Reading parameters models for handlerMethod |listByUser|
+2019-10-20 16:02:13.532 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationModelsProvider Line:94  - Finished reading parameters models for handlerMethod |listByUser|
+2019-10-20 16:02:13.532 DEBUG --- [main] springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider Line:77  - Adding return parameter of type Lcn/deercare/vo/RestResult;
+2019-10-20 16:02:13.533 DEBUG --- [main] springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider Line:84  - Reading parameters models for handlerMethod |listByUser|
+2019-10-20 16:02:13.533 DEBUG --- [main] springfox.documentation.spring.web.scanners.ApiModelReader Line:76  - Did not find any parameter models for java.lang.Object
+2019-10-20 16:02:13.533 DEBUG --- [main] springfox.documentation.spring.web.scanners.ApiModelReader Line:71  - Generated parameter model id: result, name: result, schema: {} models
+2019-10-20 16:02:13.535 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationResponseClassReader Line:59  - Setting spring response class to: object
+2019-10-20 16:02:13.535 DEBUG --- [main] springfox.documentation.swagger.readers.operation.VendorExtensionsReader Line:59  - Extension count 1 for method listByUser
+2019-10-20 16:02:13.536 DEBUG --- [main] springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader Line:74  - Setting response class to:result
+2019-10-20 16:02:13.537 DEBUG --- [main] springfox.documentation.swagger.readers.operation.OperationAuthReader Line:103 - Authorization count 0 for method listByUser
+2019-10-20 16:02:13.540 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationModelsProvider Line:76  - Adding return parameter of type Ljava/lang/Object;
+2019-10-20 16:02:13.540 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationModelsProvider Line:83  - Reading parameters models for handlerMethod |nextState|
+2019-10-20 16:02:13.540 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationModelsProvider Line:94  - Finished reading parameters models for handlerMethod |nextState|
+2019-10-20 16:02:13.540 DEBUG --- [main] springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider Line:77  - Adding return parameter of type Lcn/deercare/vo/RestResult;
+2019-10-20 16:02:13.541 DEBUG --- [main] springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider Line:84  - Reading parameters models for handlerMethod |nextState|
+2019-10-20 16:02:13.541 DEBUG --- [main] springfox.documentation.spring.web.scanners.ApiModelReader Line:76  - Did not find any parameter models for java.lang.Object
+2019-10-20 16:02:13.541 DEBUG --- [main] springfox.documentation.spring.web.scanners.ApiModelReader Line:71  - Generated parameter model id: result, name: result, schema: {} models
+2019-10-20 16:02:13.543 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationResponseClassReader Line:59  - Setting spring response class to: object
+2019-10-20 16:02:13.545 DEBUG --- [main] springfox.documentation.swagger.readers.operation.VendorExtensionsReader Line:59  - Extension count 1 for method nextState
+2019-10-20 16:02:13.545 DEBUG --- [main] springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader Line:74  - Setting response class to:result
+2019-10-20 16:02:13.546 DEBUG --- [main] springfox.documentation.swagger.readers.operation.OperationAuthReader Line:103 - Authorization count 0 for method nextState
+2019-10-20 16:02:13.559 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationModelsProvider Line:76  - Adding return parameter of type Ljava/lang/Object;
+2019-10-20 16:02:13.560 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationModelsProvider Line:83  - Reading parameters models for handlerMethod |input|
+2019-10-20 16:02:13.560 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationModelsProvider Line:94  - Finished reading parameters models for handlerMethod |input|
+2019-10-20 16:02:13.560 DEBUG --- [main] springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider Line:77  - Adding return parameter of type Lcn/deercare/vo/RestResult;
+2019-10-20 16:02:13.561 DEBUG --- [main] springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider Line:84  - Reading parameters models for handlerMethod |input|
+2019-10-20 16:02:13.561 DEBUG --- [main] springfox.documentation.spring.web.scanners.ApiModelReader Line:76  - Did not find any parameter models for java.lang.Object
+2019-10-20 16:02:13.561 DEBUG --- [main] springfox.documentation.spring.web.scanners.ApiModelReader Line:71  - Generated parameter model id: result, name: result, schema: {} models
+2019-10-20 16:02:13.561 DEBUG --- [main] springfox.documentation.spring.web.scanners.ApiModelReader Line:89  - Adding a new model with key result
+2019-10-20 16:02:13.562 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationResponseClassReader Line:59  - Setting spring response class to: object
+2019-10-20 16:02:13.563 DEBUG --- [main] springfox.documentation.swagger.readers.operation.VendorExtensionsReader Line:59  - Extension count 1 for method input
+2019-10-20 16:02:13.563 DEBUG --- [main] springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader Line:74  - Setting response class to:result
+2019-10-20 16:02:13.563 DEBUG --- [main] springfox.documentation.swagger.readers.operation.OperationAuthReader Line:103 - Authorization count 0 for method input
+2019-10-20 16:02:13.565 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationModelsProvider Line:76  - Adding return parameter of type Ljava/lang/Object;
+2019-10-20 16:02:13.565 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationModelsProvider Line:83  - Reading parameters models for handlerMethod |pay|
+2019-10-20 16:02:13.566 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationModelsProvider Line:94  - Finished reading parameters models for handlerMethod |pay|
+2019-10-20 16:02:13.566 DEBUG --- [main] springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider Line:77  - Adding return parameter of type Lcn/deercare/vo/RestResult;
+2019-10-20 16:02:13.566 DEBUG --- [main] springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider Line:84  - Reading parameters models for handlerMethod |pay|
+2019-10-20 16:02:13.566 DEBUG --- [main] springfox.documentation.spring.web.scanners.ApiModelReader Line:76  - Did not find any parameter models for java.lang.Object
+2019-10-20 16:02:13.566 DEBUG --- [main] springfox.documentation.spring.web.scanners.ApiModelReader Line:71  - Generated parameter model id: result, name: result, schema: {} models
+2019-10-20 16:02:13.566 DEBUG --- [main] springfox.documentation.spring.web.scanners.ApiModelReader Line:89  - Adding a new model with key result
+2019-10-20 16:02:13.568 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationResponseClassReader Line:59  - Setting spring response class to: object
+2019-10-20 16:02:13.568 DEBUG --- [main] springfox.documentation.swagger.readers.operation.VendorExtensionsReader Line:59  - Extension count 1 for method pay
+2019-10-20 16:02:13.568 DEBUG --- [main] springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader Line:74  - Setting response class to:result
+2019-10-20 16:02:13.569 DEBUG --- [main] springfox.documentation.swagger.readers.operation.OperationAuthReader Line:103 - Authorization count 0 for method pay
+2019-10-20 16:02:13.571 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationModelsProvider Line:76  - Adding return parameter of type Ljava/lang/Object;
+2019-10-20 16:02:13.571 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationModelsProvider Line:83  - Reading parameters models for handlerMethod |login|
+2019-10-20 16:02:13.571 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationModelsProvider Line:90  - Adding input parameter of type Lcom/alibaba/fastjson/JSONObject;
+2019-10-20 16:02:13.571 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationModelsProvider Line:94  - Finished reading parameters models for handlerMethod |login|
+2019-10-20 16:02:13.621 DEBUG --- [main] springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider Line:77  - Adding return parameter of type Lcn/deercare/vo/RestResult;
+2019-10-20 16:02:13.621 DEBUG --- [main] springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider Line:84  - Reading parameters models for handlerMethod |login|
+2019-10-20 16:02:13.621 DEBUG --- [main] springfox.documentation.spring.web.scanners.ApiModelReader Line:76  - Did not find any parameter models for java.lang.Object
+2019-10-20 16:02:13.621 DEBUG --- [main] springfox.documentation.schema.DefaultModelProvider Line:86  - Skipping model of type Lcom/alibaba/fastjson/JSONObject; as its either a container type, map, enum or base type, or its already been handled
+2019-10-20 16:02:13.621 DEBUG --- [main] springfox.documentation.spring.web.scanners.ApiModelReader Line:76  - Did not find any parameter models for com.alibaba.fastjson.JSONObject
+2019-10-20 16:02:13.622 DEBUG --- [main] springfox.documentation.schema.DefaultModelDependencyProvider Line:162 - Adding type for parameter Ljava/lang/String;
+2019-10-20 16:02:13.622 DEBUG --- [main] springfox.documentation.schema.DefaultModelDependencyProvider Line:164 - Recursively resolving dependencies for parameter Ljava/lang/String;
+2019-10-20 16:02:13.622 DEBUG --- [main] springfox.documentation.schema.DefaultModelDependencyProvider Line:113 - Marking base type Ljava/lang/String; as seen
+2019-10-20 16:02:13.622 DEBUG --- [main] springfox.documentation.schema.DefaultModelDependencyProvider Line:162 - Adding type for parameter Ljava/lang/Object;
+2019-10-20 16:02:13.622 DEBUG --- [main] springfox.documentation.schema.DefaultModelDependencyProvider Line:164 - Recursively resolving dependencies for parameter Ljava/lang/Object;
+2019-10-20 16:02:13.622 DEBUG --- [main] springfox.documentation.schema.DefaultModelDependencyProvider Line:113 - Marking base type Ljava/lang/Object; as seen
+2019-10-20 16:02:13.635 DEBUG --- [main] springfox.documentation.schema.property.OptimizedModelPropertiesProvider Line:127 - Reading property empty
+2019-10-20 16:02:13.639 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member isEmpty
+2019-10-20 16:02:13.639 DEBUG --- [main] springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy Line:73  - Name 'empty' renamed to 'empty'
+2019-10-20 16:02:13.639 DEBUG --- [main] springfox.documentation.schema.property.OptimizedModelPropertiesProvider Line:315 - Adding property empty to model
+2019-10-20 16:02:13.639 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member isEmpty
+2019-10-20 16:02:13.640 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member isEmpty
+2019-10-20 16:02:13.640 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member isEmpty
+2019-10-20 16:02:13.640 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member isEmpty
+2019-10-20 16:02:13.640 DEBUG --- [main] springfox.documentation.schema.property.OptimizedModelPropertiesProvider Line:127 - Reading property innerMap
+2019-10-20 16:02:13.641 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getInnerMap
+2019-10-20 16:02:13.641 DEBUG --- [main] springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy Line:73  - Name 'innerMap' renamed to 'innerMap'
+2019-10-20 16:02:13.641 DEBUG --- [main] springfox.documentation.schema.property.OptimizedModelPropertiesProvider Line:315 - Adding property innerMap to model
+2019-10-20 16:02:13.641 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getInnerMap
+2019-10-20 16:02:13.641 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getInnerMap
+2019-10-20 16:02:13.642 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getInnerMap
+2019-10-20 16:02:13.642 DEBUG --- [main] springfox.documentation.schema.property.bean.BeanModelProperty Line:70  - Evaluating unwrapped getter for member getInnerMap
+2019-10-20 16:02:13.643 DEBUG --- [main] springfox.documentation.schema.property.OptimizedModelPropertiesProvider Line:127 - Reading property code
+2019-10-20 16:02:13.644 DEBUG --- [main] springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy Line:73  - Name 'code' renamed to 'code'
+2019-10-20 16:02:13.645 DEBUG --- [main] springfox.documentation.schema.property.OptimizedModelPropertiesProvider Line:127 - Reading property type
+2019-10-20 16:02:13.645 DEBUG --- [main] springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy Line:73  - Name 'type' renamed to 'type'
+2019-10-20 16:02:13.646 DEBUG --- [main] springfox.documentation.schema.DefaultModelProvider Line:101 - Inferred 2 properties. Properties found code, type
+2019-10-20 16:02:13.646 DEBUG --- [main] springfox.documentation.spring.web.scanners.ApiModelReader Line:71  - Generated parameter model id: User, name: User, schema: {} models
+2019-10-20 16:02:13.646 DEBUG --- [main] springfox.documentation.spring.web.scanners.ApiModelReader Line:89  - Adding a new model with key User
+2019-10-20 16:02:13.647 DEBUG --- [main] springfox.documentation.spring.web.scanners.ApiModelReader Line:71  - Generated parameter model id: result, name: result, schema: {} models
+2019-10-20 16:02:13.647 DEBUG --- [main] springfox.documentation.spring.web.scanners.ApiModelReader Line:89  - Adding a new model with key result
+2019-10-20 16:02:13.649 DEBUG --- [main] springfox.documentation.spring.web.readers.operation.OperationResponseClassReader Line:59  - Setting spring response class to: object
+2019-10-20 16:02:13.650 DEBUG --- [main] springfox.documentation.swagger.readers.operation.VendorExtensionsReader Line:59  - Extension count 1 for method login
+2019-10-20 16:02:13.651 DEBUG --- [main] springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader Line:74  - Setting response class to:result
+2019-10-20 16:02:13.651 DEBUG --- [main] springfox.documentation.swagger.readers.operation.OperationAuthReader Line:103 - Authorization count 0 for method login
+2019-10-20 16:02:47.587 DEBUG --- [http-nio-80-exec-9] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /doc.html
+2019-10-20 16:02:47.674 DEBUG --- [http-nio-80-exec-10] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/ext/i18n.js
+2019-10-20 16:02:47.694 DEBUG --- [http-nio-80-exec-1] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/jquery/jquery-1.9.1.min.js
+2019-10-20 16:02:47.699 DEBUG --- [http-nio-80-exec-2] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/ace/bootstrap.min.js
+2019-10-20 16:02:47.704 DEBUG --- [http-nio-80-exec-2] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/ace/ace.min.js
+2019-10-20 16:02:47.706 DEBUG --- [http-nio-80-exec-4] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/jquery/clipboard/clipboard.min.js
+2019-10-20 16:02:47.706 DEBUG --- [http-nio-80-exec-3] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/bootstrap/css/bootstrap.min.css
+2019-10-20 16:02:47.717 DEBUG --- [http-nio-80-exec-6] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/layer3.0.3/skin/default/layer.css
+2019-10-20 16:02:47.730 DEBUG --- [http-nio-80-exec-3] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/highlight/styles/style.css
+2019-10-20 16:02:47.735 DEBUG --- [http-nio-80-exec-8] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/cdao/swaggerbootstrapui.css
+2019-10-20 16:02:47.758 DEBUG --- [http-nio-80-exec-5] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/layui/css/layui.css
+2019-10-20 16:02:47.762 DEBUG --- [http-nio-80-exec-9] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/iconfont/iconfont.css
+2019-10-20 16:02:47.767 DEBUG --- [http-nio-80-exec-10] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/bootstrap-tabx/css/bootstrap-tabs-x.min.css
+2019-10-20 16:02:47.769 DEBUG --- [http-nio-80-exec-7] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/ext/editormd.min.css
+2019-10-20 16:02:47.785 DEBUG --- [http-nio-80-exec-6] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/layer3.0.3/layer.js
+2019-10-20 16:02:47.792 DEBUG --- [http-nio-80-exec-4] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/jquery/template-web.js
+2019-10-20 16:02:47.794 DEBUG --- [http-nio-80-exec-3] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/jquery/axios.min.js
+2019-10-20 16:02:47.806 DEBUG --- [http-nio-80-exec-7] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/highlight/highlight.pack.js
+2019-10-20 16:02:47.807 DEBUG --- [http-nio-80-exec-5] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/jquery/marked.js
+2019-10-20 16:02:47.810 DEBUG --- [http-nio-80-exec-4] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/layui/layui.js
+2019-10-20 16:02:47.824 DEBUG --- [http-nio-80-exec-7] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/jquery/showdown.min.js
+2019-10-20 16:02:47.825 DEBUG --- [http-nio-80-exec-8] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/ace-editor/ace.js
+2019-10-20 16:02:47.830 DEBUG --- [http-nio-80-exec-1] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/jquery/async.min.js
+2019-10-20 16:02:47.850 DEBUG --- [http-nio-80-exec-9] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/jquery/md5.min.js
+2019-10-20 16:02:47.853 DEBUG --- [http-nio-80-exec-3] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/cdao/swaggerbootstrapui.js
+2019-10-20 16:02:47.887 DEBUG --- [http-nio-80-exec-2] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/layer3.0.3/skin/default/layer.css
+2019-10-20 16:02:48.008 DEBUG --- [http-nio-80-exec-10] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/layui/lay/modules/layer.js
+2019-10-20 16:02:48.021 DEBUG --- [http-nio-80-exec-6] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/layui/lay/modules/element.js
+2019-10-20 16:02:48.042 DEBUG --- [http-nio-80-exec-5] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/ext/treetable.js
+2019-10-20 16:02:48.050 DEBUG --- [http-nio-80-exec-4] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/layui/lay/modules/table.js
+2019-10-20 16:02:48.069 DEBUG --- [http-nio-80-exec-1] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/layui/lay/modules/form.js
+2019-10-20 16:02:48.109 DEBUG --- [http-nio-80-exec-7] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /swagger-resources
+2019-10-20 16:02:48.178 DEBUG --- [http-nio-80-exec-9] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /v2/api-docs
+2019-10-20 16:02:48.179 DEBUG --- [http-nio-80-exec-9] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:420 - Mapped to public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2019-10-20 16:02:55.474 DEBUG --- [http-nio-80-exec-4] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /project-income.html
+2019-10-20 16:02:55.479 DEBUG --- [http-nio-80-exec-4] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /error
+2019-10-20 17:48:40.427 DEBUG --- [http-nio-80-exec-9] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /swagger-resources
+2019-10-20 17:48:40.496 DEBUG --- [http-nio-80-exec-2] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /v2/api-docs
+2019-10-20 17:48:40.498 DEBUG --- [http-nio-80-exec-2] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:420 - Mapped to public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2019-10-20 17:48:40.627 DEBUG --- [http-nio-80-exec-6] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/images/api.ico
+2019-10-20 17:48:44.548 DEBUG --- [http-nio-80-exec-10] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/ace-editor/mode-json.js
+2019-10-20 17:48:44.682 DEBUG --- [http-nio-80-exec-5] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/layui/font/iconfont.woff
+2019-10-20 17:48:44.726 DEBUG --- [http-nio-80-exec-4] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /webjars/bycdao-ui/ace-editor/worker-json.js
+2019-10-20 17:49:05.778 DEBUG --- [http-nio-80-exec-7] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /user/login
+2019-10-20 17:49:06.190 DEBUG --- [http-nio-80-exec-7] cn.deercare.over.RestTemplate Line:147 - HTTP GET https://api.weixin.qq.com/sns/jscode2session?appid=wx4436516d451b7de9&secret=f577325ca266a421fe60751d71f25e70&js_code=071ZhZq50KA3vD1PXXr50Xn0r50ZhZq0&grant_type=authorization_code
+2019-10-20 17:49:06.194 DEBUG --- [http-nio-80-exec-7] cn.deercare.over.RestTemplate Line:147 - Accept=[text/plain, application/json, application/*+json, */*]
+2019-10-20 17:49:06.512 DEBUG --- [http-nio-80-exec-7] cn.deercare.over.RestTemplate Line:147 - Response 200 OK
+2019-10-20 17:49:06.513 DEBUG --- [http-nio-80-exec-7] cn.deercare.over.RestTemplate Line:147 - Reading to [java.lang.String] as "text/plain"
+2019-10-20 17:49:06.631 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:49:06.644 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@60fbf16e] was not registered for synchronization because synchronization is not active
+2019-10-20 17:49:07.194 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:49:07.202 DEBUG --- [http-nio-80-exec-7] cn.deercare.mapper.UserWechatMapper.selectOne Line:143 - ==>  Preparing: SELECT * FROM t_user_wechat WHERE (unionid = ?) 
+2019-10-20 17:49:07.248 DEBUG --- [http-nio-80-exec-7] cn.deercare.mapper.UserWechatMapper.selectOne Line:143 - ==> Parameters: oIFiB1OYMBAOODe2Qi5RsL0exXwg(String)
+2019-10-20 17:49:07.308 DEBUG --- [http-nio-80-exec-7] cn.deercare.mapper.UserWechatMapper.selectOne Line:143 - <==      Total: 1
+2019-10-20 17:49:07.309 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@60fbf16e]
+2019-10-20 17:49:07.336 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:49:07.337 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@25e76b4e] was not registered for synchronization because synchronization is not active
+2019-10-20 17:49:07.353 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:49:07.353 DEBUG --- [http-nio-80-exec-7] cn.deercare.mapper.UserWechatMapper.update Line:143 - ==>  Preparing: UPDATE t_user_wechat SET unionid=?, program_openid=?, session_key=?, user_id=? WHERE (unionid = ?) 
+2019-10-20 17:49:07.355 DEBUG --- [http-nio-80-exec-7] cn.deercare.mapper.UserWechatMapper.update Line:143 - ==> Parameters: oIFiB1OYMBAOODe2Qi5RsL0exXwg(String), oWNYK4z5kiLWHy3B3LIVCwO2iouk(String), LsHyeNSej698FhKCkK9BtA==(String), 23(Long), oIFiB1OYMBAOODe2Qi5RsL0exXwg(String)
+2019-10-20 17:49:07.377 DEBUG --- [http-nio-80-exec-7] cn.deercare.mapper.UserWechatMapper.update Line:143 - <==    Updates: 1
+2019-10-20 17:49:07.379 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@25e76b4e]
+2019-10-20 17:49:07.471 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:49:07.471 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20386a8d] was not registered for synchronization because synchronization is not active
+2019-10-20 17:49:07.473 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:49:07.473 DEBUG --- [http-nio-80-exec-7] cn.deercare.mapper.UserMapper.updateById Line:143 - ==>  Preparing: UPDATE t_user SET update_time=?, type=?, token=? WHERE id=? 
+2019-10-20 17:49:07.475 DEBUG --- [http-nio-80-exec-7] cn.deercare.mapper.UserMapper.updateById Line:143 - ==> Parameters: 2019-10-20T17:49:07.461(LocalDateTime), 1(Integer), eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIyMyIsImlhdCI6MTU3MTU2NDk0Nywic3ViIjoiMSIsImlzcyI6Ind3dy5kZWVyY2FyZS5jbiIsImV4cCI6MTU3MTU3NTc0N30.oYOulYLc-M5K-HrOSATAV-9lFU-2n4-sniwFHOOwLVs(String), 23(Long)
+2019-10-20 17:49:07.493 DEBUG --- [http-nio-80-exec-7] cn.deercare.mapper.UserMapper.updateById Line:143 - <==    Updates: 1
+2019-10-20 17:49:07.493 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20386a8d]
+2019-10-20 17:49:07.505 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:49:07.506 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c00e18e] was not registered for synchronization because synchronization is not active
+2019-10-20 17:49:07.508 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:49:07.508 DEBUG --- [http-nio-80-exec-7] cn.deercare.mapper.UserProjectMapper.selectList Line:143 - ==>  Preparing: SELECT id,proportion,create_time,order_id,project_id,user_id,verification FROM t_user_project WHERE (user_id = ? AND verification = ?) 
+2019-10-20 17:49:07.509 DEBUG --- [http-nio-80-exec-7] cn.deercare.mapper.UserProjectMapper.selectList Line:143 - ==> Parameters: 23(Long), 1(Integer)
+2019-10-20 17:49:07.519 DEBUG --- [http-nio-80-exec-7] cn.deercare.mapper.UserProjectMapper.selectList Line:143 - <==      Total: 0
+2019-10-20 17:49:07.520 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c00e18e]
+2019-10-20 17:49:25.230 DEBUG --- [http-nio-80-exec-2] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /project/pay/2/0.1
+2019-10-20 17:49:25.343 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:49:25.344 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4597a313] was not registered for synchronization because synchronization is not active
+2019-10-20 17:49:25.344 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:49:25.344 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.UserMapper.selectById Line:143 - ==>  Preparing: SELECT id,create_time,update_time,type,token FROM t_user WHERE id=? 
+2019-10-20 17:49:25.345 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.UserMapper.selectById Line:143 - ==> Parameters: 23(String)
+2019-10-20 17:49:25.390 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.UserMapper.selectById Line:143 - <==      Total: 1
+2019-10-20 17:49:25.391 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4597a313]
+2019-10-20 17:49:25.425 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:49:25.427 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@329383d5] was not registered for synchronization because synchronization is not active
+2019-10-20 17:49:25.428 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:49:25.429 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.ProjectMapper.selectById Line:143 - ==>  Preparing: SELECT id,amount,create_time,payment_id,name,update_time,type FROM t_project WHERE id=? 
+2019-10-20 17:49:25.429 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.ProjectMapper.selectById Line:143 - ==> Parameters: 2(Long)
+2019-10-20 17:49:25.442 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.ProjectMapper.selectById Line:143 - <==      Total: 0
+2019-10-20 17:49:25.443 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@329383d5]
+2019-10-20 17:49:32.387 DEBUG --- [http-nio-80-exec-3] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /project/pay/3/0.1
+2019-10-20 17:49:32.395 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:49:32.395 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@68a2c2a4] was not registered for synchronization because synchronization is not active
+2019-10-20 17:49:32.396 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:49:32.397 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.UserMapper.selectById Line:143 - ==>  Preparing: SELECT id,create_time,update_time,type,token FROM t_user WHERE id=? 
+2019-10-20 17:49:32.399 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.UserMapper.selectById Line:143 - ==> Parameters: 23(String)
+2019-10-20 17:49:32.413 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.UserMapper.selectById Line:143 - <==      Total: 1
+2019-10-20 17:49:32.415 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@68a2c2a4]
+2019-10-20 17:49:32.417 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:49:32.419 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a9ff61f] was not registered for synchronization because synchronization is not active
+2019-10-20 17:49:32.420 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:49:32.420 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.ProjectMapper.selectById Line:143 - ==>  Preparing: SELECT id,amount,create_time,payment_id,name,update_time,type FROM t_project WHERE id=? 
+2019-10-20 17:49:32.421 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.ProjectMapper.selectById Line:143 - ==> Parameters: 3(Long)
+2019-10-20 17:49:32.459 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.ProjectMapper.selectById Line:143 - <==      Total: 0
+2019-10-20 17:49:32.460 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a9ff61f]
+2019-10-20 17:56:07.315 DEBUG --- [http-nio-80-exec-10] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /project/pay/3/0.01
+2019-10-20 17:56:07.326 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:56:07.327 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6011723e] was not registered for synchronization because synchronization is not active
+2019-10-20 17:56:07.366 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:56:07.367 DEBUG --- [http-nio-80-exec-10] cn.deercare.mapper.UserMapper.selectById Line:143 - ==>  Preparing: SELECT id,create_time,update_time,type,token FROM t_user WHERE id=? 
+2019-10-20 17:56:07.368 DEBUG --- [http-nio-80-exec-10] cn.deercare.mapper.UserMapper.selectById Line:143 - ==> Parameters: 23(String)
+2019-10-20 17:56:07.389 DEBUG --- [http-nio-80-exec-10] cn.deercare.mapper.UserMapper.selectById Line:143 - <==      Total: 1
+2019-10-20 17:56:07.389 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6011723e]
+2019-10-20 17:56:29.777 DEBUG --- [http-nio-80-exec-4] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /user/login
+2019-10-20 17:56:29.784 DEBUG --- [http-nio-80-exec-4] cn.deercare.over.RestTemplate Line:147 - HTTP GET https://api.weixin.qq.com/sns/jscode2session?appid=wx4436516d451b7de9&secret=f577325ca266a421fe60751d71f25e70&js_code=011RkxAi2EeqAA0N41Di2bWbAi2RkxAx&grant_type=authorization_code
+2019-10-20 17:56:29.785 DEBUG --- [http-nio-80-exec-4] cn.deercare.over.RestTemplate Line:147 - Accept=[text/plain, application/json, application/*+json, */*]
+2019-10-20 17:56:30.007 DEBUG --- [http-nio-80-exec-4] cn.deercare.over.RestTemplate Line:147 - Response 200 OK
+2019-10-20 17:56:30.008 DEBUG --- [http-nio-80-exec-4] cn.deercare.over.RestTemplate Line:147 - Reading to [java.lang.String] as "text/plain"
+2019-10-20 17:56:30.012 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:56:30.013 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@606c5843] was not registered for synchronization because synchronization is not active
+2019-10-20 17:56:30.033 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:56:30.034 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.UserWechatMapper.selectOne Line:143 - ==>  Preparing: SELECT * FROM t_user_wechat WHERE (unionid = ?) 
+2019-10-20 17:56:30.035 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.UserWechatMapper.selectOne Line:143 - ==> Parameters: oIFiB1OYMBAOODe2Qi5RsL0exXwg(String)
+2019-10-20 17:56:30.053 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.UserWechatMapper.selectOne Line:143 - <==      Total: 1
+2019-10-20 17:56:30.053 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@606c5843]
+2019-10-20 17:56:30.055 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:56:30.055 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@35630d03] was not registered for synchronization because synchronization is not active
+2019-10-20 17:56:30.060 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:56:30.061 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.UserWechatMapper.update Line:143 - ==>  Preparing: UPDATE t_user_wechat SET unionid=?, program_openid=?, session_key=?, user_id=? WHERE (unionid = ?) 
+2019-10-20 17:56:30.062 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.UserWechatMapper.update Line:143 - ==> Parameters: oIFiB1OYMBAOODe2Qi5RsL0exXwg(String), oWNYK4z5kiLWHy3B3LIVCwO2iouk(String), 4aRF0hw39GNBf/ZUvqu/hA==(String), 23(Long), oIFiB1OYMBAOODe2Qi5RsL0exXwg(String)
+2019-10-20 17:56:30.080 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.UserWechatMapper.update Line:143 - <==    Updates: 1
+2019-10-20 17:56:30.082 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@35630d03]
+2019-10-20 17:56:30.083 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:56:30.084 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@657d355c] was not registered for synchronization because synchronization is not active
+2019-10-20 17:56:30.085 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:56:30.085 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.UserMapper.updateById Line:143 - ==>  Preparing: UPDATE t_user SET update_time=?, type=?, token=? WHERE id=? 
+2019-10-20 17:56:30.086 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.UserMapper.updateById Line:143 - ==> Parameters: 2019-10-20T17:56:30.083(LocalDateTime), 1(Integer), eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIyMyIsImlhdCI6MTU3MTU2NTM5MCwic3ViIjoiMSIsImlzcyI6Ind3dy5kZWVyY2FyZS5jbiIsImV4cCI6MTU3MTU3NjE5MH0.U1mXhteRyTIzg239IyRAiXOiBUyCPMf9daQYlPRLFoI(String), 23(Long)
+2019-10-20 17:56:30.138 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.UserMapper.updateById Line:143 - <==    Updates: 1
+2019-10-20 17:56:30.139 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@657d355c]
+2019-10-20 17:56:30.140 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:56:30.141 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@736f9b] was not registered for synchronization because synchronization is not active
+2019-10-20 17:56:30.143 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:56:30.143 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.UserProjectMapper.selectList Line:143 - ==>  Preparing: SELECT id,proportion,create_time,order_id,project_id,user_id,verification FROM t_user_project WHERE (user_id = ? AND verification = ?) 
+2019-10-20 17:56:30.144 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.UserProjectMapper.selectList Line:143 - ==> Parameters: 23(Long), 1(Integer)
+2019-10-20 17:56:30.158 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.UserProjectMapper.selectList Line:143 - <==      Total: 0
+2019-10-20 17:56:30.159 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@736f9b]
+2019-10-20 17:56:42.964 DEBUG --- [http-nio-80-exec-7] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /project/pay/3/0.01
+2019-10-20 17:56:42.972 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:56:42.972 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f24cdf0] was not registered for synchronization because synchronization is not active
+2019-10-20 17:56:42.973 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:56:42.973 DEBUG --- [http-nio-80-exec-7] cn.deercare.mapper.UserMapper.selectById Line:143 - ==>  Preparing: SELECT id,create_time,update_time,type,token FROM t_user WHERE id=? 
+2019-10-20 17:56:42.975 DEBUG --- [http-nio-80-exec-7] cn.deercare.mapper.UserMapper.selectById Line:143 - ==> Parameters: 23(String)
+2019-10-20 17:56:42.989 DEBUG --- [http-nio-80-exec-7] cn.deercare.mapper.UserMapper.selectById Line:143 - <==      Total: 1
+2019-10-20 17:56:42.989 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f24cdf0]
+2019-10-20 17:56:42.991 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:56:42.991 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@757b1326] was not registered for synchronization because synchronization is not active
+2019-10-20 17:56:42.991 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:56:42.992 DEBUG --- [http-nio-80-exec-7] cn.deercare.mapper.ProjectMapper.selectById Line:143 - ==>  Preparing: SELECT id,amount,create_time,payment_id,name,update_time,type FROM t_project WHERE id=? 
+2019-10-20 17:56:42.993 DEBUG --- [http-nio-80-exec-7] cn.deercare.mapper.ProjectMapper.selectById Line:143 - ==> Parameters: 3(Long)
+2019-10-20 17:56:43.006 DEBUG --- [http-nio-80-exec-7] cn.deercare.mapper.ProjectMapper.selectById Line:143 - <==      Total: 0
+2019-10-20 17:56:43.007 DEBUG --- [http-nio-80-exec-7] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@757b1326]
+2019-10-20 17:57:24.833 DEBUG --- [http-nio-80-exec-2] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /project/pay/4/0.01
+2019-10-20 17:57:24.839 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:57:24.841 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1dc1dc7a] was not registered for synchronization because synchronization is not active
+2019-10-20 17:57:24.841 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:57:24.843 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.UserMapper.selectById Line:143 - ==>  Preparing: SELECT id,create_time,update_time,type,token FROM t_user WHERE id=? 
+2019-10-20 17:57:24.844 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.UserMapper.selectById Line:143 - ==> Parameters: 23(String)
+2019-10-20 17:57:24.866 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.UserMapper.selectById Line:143 - <==      Total: 1
+2019-10-20 17:57:24.868 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1dc1dc7a]
+2019-10-20 17:57:24.871 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:57:24.872 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e1d7245] was not registered for synchronization because synchronization is not active
+2019-10-20 17:57:24.872 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:57:24.873 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.ProjectMapper.selectById Line:143 - ==>  Preparing: SELECT id,amount,create_time,payment_id,name,update_time,type FROM t_project WHERE id=? 
+2019-10-20 17:57:24.875 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.ProjectMapper.selectById Line:143 - ==> Parameters: 4(Long)
+2019-10-20 17:57:24.891 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.ProjectMapper.selectById Line:143 - <==      Total: 1
+2019-10-20 17:57:24.892 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e1d7245]
+2019-10-20 17:57:24.894 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:57:24.895 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44a706d0] was not registered for synchronization because synchronization is not active
+2019-10-20 17:57:24.896 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:57:24.896 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.ProjectPaymentMapper.selectById Line:143 - ==>  Preparing: SELECT id,min,type FROM t_project_payment WHERE id=? 
+2019-10-20 17:57:24.896 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.ProjectPaymentMapper.selectById Line:143 - ==> Parameters: 1(Integer)
+2019-10-20 17:57:24.908 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.ProjectPaymentMapper.selectById Line:143 - <==      Total: 1
+2019-10-20 17:57:24.909 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44a706d0]
+2019-10-20 17:57:24.910 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:57:24.912 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@571ee92a] was not registered for synchronization because synchronization is not active
+2019-10-20 17:57:24.912 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:57:24.913 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.ProjectMapper.getProjectAccountAmount Line:143 - ==>  Preparing: select ifnull(sum(torder.amount_payable), 0) as 'accountAmount' from t_user_project tup INNER JOIN t_order torder on torder.id = tup.order_id where tup.verification = 2 and tup.project_id = ? 
+2019-10-20 17:57:24.914 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.ProjectMapper.getProjectAccountAmount Line:143 - ==> Parameters: 4(Long)
+2019-10-20 17:57:24.924 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.ProjectMapper.getProjectAccountAmount Line:143 - <==      Total: 1
+2019-10-20 17:57:24.925 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@571ee92a]
+2019-10-20 17:57:24.945 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:57:24.946 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b2b55a] was not registered for synchronization because synchronization is not active
+2019-10-20 17:57:24.950 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:57:24.951 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.ProjectHotelMapper.selectOne Line:143 - ==>  Preparing: SELECT * FROM t_project_hotel WHERE (project_id = ?) 
+2019-10-20 17:57:24.952 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.ProjectHotelMapper.selectOne Line:143 - ==> Parameters: 4(Long)
+2019-10-20 17:57:24.965 DEBUG --- [http-nio-80-exec-2] cn.deercare.mapper.ProjectHotelMapper.selectOne Line:143 - <==      Total: 1
+2019-10-20 17:57:24.967 DEBUG --- [http-nio-80-exec-2] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b2b55a]
+2019-10-20 17:57:39.877 DEBUG --- [http-nio-80-exec-3] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /project/pay/4/0.1
+2019-10-20 17:57:39.883 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:57:39.883 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2da41ce5] was not registered for synchronization because synchronization is not active
+2019-10-20 17:57:39.884 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:57:39.884 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.UserMapper.selectById Line:143 - ==>  Preparing: SELECT id,create_time,update_time,type,token FROM t_user WHERE id=? 
+2019-10-20 17:57:39.885 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.UserMapper.selectById Line:143 - ==> Parameters: 23(String)
+2019-10-20 17:57:39.910 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.UserMapper.selectById Line:143 - <==      Total: 1
+2019-10-20 17:57:39.911 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2da41ce5]
+2019-10-20 17:57:39.913 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:57:39.914 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@238ed3ef] was not registered for synchronization because synchronization is not active
+2019-10-20 17:57:39.915 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:57:39.915 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.ProjectMapper.selectById Line:143 - ==>  Preparing: SELECT id,amount,create_time,payment_id,name,update_time,type FROM t_project WHERE id=? 
+2019-10-20 17:57:39.916 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.ProjectMapper.selectById Line:143 - ==> Parameters: 4(Long)
+2019-10-20 17:57:39.931 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.ProjectMapper.selectById Line:143 - <==      Total: 1
+2019-10-20 17:57:39.932 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@238ed3ef]
+2019-10-20 17:57:39.932 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:57:39.933 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@793aeb86] was not registered for synchronization because synchronization is not active
+2019-10-20 17:57:39.933 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:57:39.933 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.ProjectPaymentMapper.selectById Line:143 - ==>  Preparing: SELECT id,min,type FROM t_project_payment WHERE id=? 
+2019-10-20 17:57:39.934 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.ProjectPaymentMapper.selectById Line:143 - ==> Parameters: 1(Integer)
+2019-10-20 17:57:39.944 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.ProjectPaymentMapper.selectById Line:143 - <==      Total: 1
+2019-10-20 17:57:39.945 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@793aeb86]
+2019-10-20 17:57:39.947 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:57:39.948 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@60b9a4be] was not registered for synchronization because synchronization is not active
+2019-10-20 17:57:39.949 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:57:39.949 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.ProjectMapper.getProjectAccountAmount Line:143 - ==>  Preparing: select ifnull(sum(torder.amount_payable), 0) as 'accountAmount' from t_user_project tup INNER JOIN t_order torder on torder.id = tup.order_id where tup.verification = 2 and tup.project_id = ? 
+2019-10-20 17:57:39.950 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.ProjectMapper.getProjectAccountAmount Line:143 - ==> Parameters: 4(Long)
+2019-10-20 17:57:39.968 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.ProjectMapper.getProjectAccountAmount Line:143 - <==      Total: 1
+2019-10-20 17:57:39.969 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@60b9a4be]
+2019-10-20 17:57:39.970 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:57:39.970 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b9a3ae7] was not registered for synchronization because synchronization is not active
+2019-10-20 17:57:39.974 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 17:57:39.975 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.ProjectHotelMapper.selectOne Line:143 - ==>  Preparing: SELECT * FROM t_project_hotel WHERE (project_id = ?) 
+2019-10-20 17:57:39.978 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.ProjectHotelMapper.selectOne Line:143 - ==> Parameters: 4(Long)
+2019-10-20 17:57:39.992 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.ProjectHotelMapper.selectOne Line:143 - <==      Total: 1
+2019-10-20 17:57:39.993 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b9a3ae7]
+2019-10-20 17:57:40.043 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 17:57:40.044 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d8cede]
+2019-10-20 17:57:40.050 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will be managed by Spring
+2019-10-20 17:57:40.051 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.UserMapper.selectOne Line:143 - ==>  Preparing: SELECT * FROM t_user WHERE (id = ?) 
+2019-10-20 17:57:40.052 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.UserMapper.selectOne Line:143 - ==> Parameters: 23(String)
+2019-10-20 17:57:40.064 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.UserMapper.selectOne Line:143 - <==      Total: 1
+2019-10-20 17:57:40.065 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d8cede]
+2019-10-20 17:57:40.074 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d8cede] from current transaction
+2019-10-20 17:57:40.075 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.UserWechatMapper.selectOne Line:143 - ==>  Preparing: SELECT * FROM t_user_wechat WHERE (user_id = ?) 
+2019-10-20 17:57:40.076 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.UserWechatMapper.selectOne Line:143 - ==> Parameters: 23(String)
+2019-10-20 17:57:40.088 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.UserWechatMapper.selectOne Line:143 - <==      Total: 1
+2019-10-20 17:57:40.089 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d8cede]
+2019-10-20 17:57:40.233 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d8cede] from current transaction
+2019-10-20 17:57:40.250 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.OrderMapper.insert Line:143 - ==>  Preparing: INSERT INTO t_order ( mode, number, amount_payable, name, state, amount_pay, type ) VALUES ( ?, ?, ?, ?, ?, ?, ? ) 
+2019-10-20 17:57:40.251 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.OrderMapper.insert Line:143 - ==> Parameters: 1(Integer), 635537133066518528(String), 0.1(BigDecimal), 酒店1(String), u(String), 0.1(BigDecimal), 1(Integer)
+2019-10-20 17:57:40.269 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.OrderMapper.insert Line:143 - <==    Updates: 1
+2019-10-20 17:57:40.275 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d8cede]
+2019-10-20 17:57:40.276 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d8cede] from current transaction
+2019-10-20 17:57:40.280 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.UserProjectMapper.insert Line:143 - ==>  Preparing: INSERT INTO t_user_project ( proportion, order_id, project_id, user_id, verification ) VALUES ( ?, ?, ?, ?, ? ) 
+2019-10-20 17:57:40.282 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.UserProjectMapper.insert Line:143 - ==> Parameters: 0.0(Double), 26(Long), 4(Long), 23(Long), 1(Integer)
+2019-10-20 17:57:40.327 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.UserProjectMapper.insert Line:143 - <==    Updates: 1
+2019-10-20 17:57:40.328 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d8cede]
+2019-10-20 17:57:40.356 DEBUG --- [http-nio-80-exec-3] cn.deercare.over.RestTemplate Line:147 - HTTP POST https://api.mch.weixin.qq.com/pay/unifiedorder
+2019-10-20 17:57:40.357 DEBUG --- [http-nio-80-exec-3] cn.deercare.over.RestTemplate Line:147 - Accept=[text/plain, application/json, application/*+json, */*]
+2019-10-20 17:57:40.358 DEBUG --- [http-nio-80-exec-3] cn.deercare.over.RestTemplate Line:147 - Writing [<xml><appid><![CDATA[wx4436516d451b7de9]]></appid><attach><![CDATA[{"userProjectId":22,"orderId":26,"orderNum":"635537133066518528"}]]></attach><body><![CDATA[酒店1]]></body><detail><![CDATA[酒店1]]></detail><device_info><![CDATA[PROGRAM]]></device_info><fee_type><![CDATA[CNY]]></fee_type><limit_pay><![CDATA[no_credit]]></limit_pay><mch_id><![CDATA[1556309821]]></mch_id><nonce_str><![CDATA[wvlyin5g2wg6pqjxmg8t1uzcebcjkzdn]]></nonce_str><notify_url><![CDATA[http://a.deercare.cn/order-wechat/notify]]></notify_url><openid><![CDATA[oWNYK4z5kiLWHy3B3LIVCwO2iouk]]></openid><out_trade_no><![CDATA[635537133066518528]]></out_trade_no><product_id><![CDATA[3]]></product_id><sign><![CDATA[4EBFBFCB66317260B6C2E9F1E9804326]]></sign><sign_type><![CDATA[MD5]]></sign_type><spbill_create_ip><![CDATA[192.168.1.4]]></spbill_create_ip><time_expire><![CDATA[20191020182740]]></time_expire><time_start><![CDATA[20191020182740]]></time_start><total_fee><![CDATA[10]]></total_fee><trade_type><![CDATA[JSAPI]]></trade_type></xml>] as "application/json;charset=UTF-8"
+2019-10-20 17:57:40.780 DEBUG --- [http-nio-80-exec-3] cn.deercare.over.RestTemplate Line:147 - Response 200 OK
+2019-10-20 17:57:40.781 DEBUG --- [http-nio-80-exec-3] cn.deercare.over.RestTemplate Line:147 - Reading to [java.lang.String] as "text/plain"
+2019-10-20 17:57:40.838 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d8cede] from current transaction
+2019-10-20 17:57:40.841 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.OrderWechatMapper.insert Line:143 - ==>  Preparing: INSERT INTO t_order_wechat ( result, request, order_id, order_num, state, request_second ) VALUES ( ?, ?, ?, ?, ?, ? ) 
+2019-10-20 17:57:40.842 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.OrderWechatMapper.insert Line:143 - ==> Parameters: <xml><return_code><![CDATA[SUCCESS]]></return_code>
+<return_msg><![CDATA[OK]]></return_msg>
+<appid><![CDATA[wx4436516d451b7de9]]></appid>
+<mch_id><![CDATA[1556309821]]></mch_id>
+<device_info><![CDATA[PROGRAM]]></device_info>
+<nonce_str><![CDATA[xZxaU2AfFJb1Kyun]]></nonce_str>
+<sign><![CDATA[605CA62974B38C4BF4D6D5207403BC63]]></sign>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<prepay_id><![CDATA[wx20175740761397792256f5831468275400]]></prepay_id>
+<trade_type><![CDATA[JSAPI]]></trade_type>
+</xml>(String), {appid=wx4436516d451b7de9, attach={"userProjectId":22,"orderId":26,"orderNum":"635537133066518528"}, body=酒店1, detail=酒店1, device_info=PROGRAM, fee_type=CNY, limit_pay=no_credit, mch_id=1556309821, nonce_str=wvlyin5g2wg6pqjxmg8t1uzcebcjkzdn, notify_url=http://a.deercare.cn/order-wechat/notify, openid=oWNYK4z5kiLWHy3B3LIVCwO2iouk, out_trade_no=635537133066518528, product_id=3, sign=4EBFBFCB66317260B6C2E9F1E9804326, sign_type=MD5, spbill_create_ip=192.168.1.4, time_expire=20191020182740, time_start=20191020182740, total_fee=10, trade_type=JSAPI}(String), 26(Long), 635537133066518528(String), NOTPAY(String), {appId=wx4436516d451b7de9, nonceStr=if0exssdsxo16zvku0sl8gczwkyjfgkn, package=prepay_id=wx20175740761397792256f5831468275400, signType=MD5, timeStamp=1571565460}(String)
+2019-10-20 17:57:40.863 DEBUG --- [http-nio-80-exec-3] cn.deercare.mapper.OrderWechatMapper.insert Line:143 - <==    Updates: 1
+2019-10-20 17:57:40.863 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d8cede]
+2019-10-20 17:57:40.866 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d8cede]
+2019-10-20 17:57:40.867 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d8cede]
+2019-10-20 17:57:40.868 DEBUG --- [http-nio-80-exec-3] org.mybatis.spring.SqlSessionUtils Line:49  - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d8cede]
+2019-10-20 18:00:01.354 DEBUG --- [http-nio-80-exec-10] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /project/list/1
+2019-10-20 18:00:01.358 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 18:00:01.358 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45e64f4c] was not registered for synchronization because synchronization is not active
+2019-10-20 18:00:01.403 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 18:00:01.404 DEBUG --- [http-nio-80-exec-10] cn.deercare.mapper.UserMapper.selectById Line:143 - ==>  Preparing: SELECT id,create_time,update_time,type,token FROM t_user WHERE id=? 
+2019-10-20 18:00:01.404 DEBUG --- [http-nio-80-exec-10] cn.deercare.mapper.UserMapper.selectById Line:143 - ==> Parameters: 23(String)
+2019-10-20 18:00:01.415 DEBUG --- [http-nio-80-exec-10] cn.deercare.mapper.UserMapper.selectById Line:143 - <==      Total: 1
+2019-10-20 18:00:01.416 DEBUG --- [http-nio-80-exec-10] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45e64f4c]
+2019-10-20 18:00:09.886 DEBUG --- [http-nio-80-exec-4] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:108 - looking up handler for path: /project/list/1
+2019-10-20 18:00:09.892 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 18:00:09.893 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b5a0d3d] was not registered for synchronization because synchronization is not active
+2019-10-20 18:00:09.894 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 18:00:09.895 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.UserMapper.selectById Line:143 - ==>  Preparing: SELECT id,create_time,update_time,type,token FROM t_user WHERE id=? 
+2019-10-20 18:00:09.896 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.UserMapper.selectById Line:143 - ==> Parameters: 23(String)
+2019-10-20 18:00:09.907 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.UserMapper.selectById Line:143 - <==      Total: 1
+2019-10-20 18:00:09.908 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b5a0d3d]
+2019-10-20 18:00:09.910 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 18:00:09.911 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@763c9d24] was not registered for synchronization because synchronization is not active
+2019-10-20 18:00:10.242 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 18:00:10.243 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.ProjectMapper.selectList_COUNT Line:143 - ==>  Preparing: SELECT count(0) FROM t_project 
+2019-10-20 18:00:10.244 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.ProjectMapper.selectList_COUNT Line:143 - ==> Parameters: 
+2019-10-20 18:00:10.278 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.ProjectMapper.selectList_COUNT Line:143 - <==      Total: 1
+2019-10-20 18:00:10.282 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.ProjectMapper.selectList Line:143 - ==>  Preparing: SELECT id,amount,create_time,payment_id,name,update_time,type FROM t_project limit ? offset ? 
+2019-10-20 18:00:10.283 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.ProjectMapper.selectList Line:143 - ==> Parameters: 20(Integer), 0(Integer)
+2019-10-20 18:00:10.294 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.ProjectMapper.selectList Line:143 - <==      Total: 1
+2019-10-20 18:00:10.295 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@763c9d24]
+2019-10-20 18:00:10.296 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 18:00:10.298 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@8e2bce5] was not registered for synchronization because synchronization is not active
+2019-10-20 18:00:10.299 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 18:00:10.299 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.ProjectPaymentMapper.selectById Line:143 - ==>  Preparing: SELECT id,min,type FROM t_project_payment WHERE id=? 
+2019-10-20 18:00:10.299 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.ProjectPaymentMapper.selectById Line:143 - ==> Parameters: 1(Integer)
+2019-10-20 18:00:10.309 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.ProjectPaymentMapper.selectById Line:143 - <==      Total: 1
+2019-10-20 18:00:10.309 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@8e2bce5]
+2019-10-20 18:00:10.310 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 18:00:10.311 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@37648486] was not registered for synchronization because synchronization is not active
+2019-10-20 18:00:10.311 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 18:00:10.311 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.ProjectMapper.getProjectAccountAmount Line:143 - ==>  Preparing: select ifnull(sum(torder.amount_payable), 0) as 'accountAmount' from t_user_project tup INNER JOIN t_order torder on torder.id = tup.order_id where tup.verification = 2 and tup.project_id = ? 
+2019-10-20 18:00:10.312 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.ProjectMapper.getProjectAccountAmount Line:143 - ==> Parameters: 4(Long)
+2019-10-20 18:00:10.334 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.ProjectMapper.getProjectAccountAmount Line:143 - <==      Total: 1
+2019-10-20 18:00:10.335 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@37648486]
+2019-10-20 18:00:10.336 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - Creating a new SqlSession
+2019-10-20 18:00:10.337 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@726aeb4f] was not registered for synchronization because synchronization is not active
+2019-10-20 18:00:10.342 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.transaction.SpringManagedTransaction Line:49  - JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@49f9bc57] will not be managed by Spring
+2019-10-20 18:00:10.343 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.ProjectHotelMapper.selectOne Line:143 - ==>  Preparing: SELECT * FROM t_project_hotel WHERE (project_id = ?) 
+2019-10-20 18:00:10.344 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.ProjectHotelMapper.selectOne Line:143 - ==> Parameters: 4(Long)
+2019-10-20 18:00:10.361 DEBUG --- [http-nio-80-exec-4] cn.deercare.mapper.ProjectHotelMapper.selectOne Line:143 - <==      Total: 1
+2019-10-20 18:00:10.362 DEBUG --- [http-nio-80-exec-4] org.mybatis.spring.SqlSessionUtils Line:49  - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@726aeb4f]

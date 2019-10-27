@@ -1,0 +1,132 @@
+2019-10-13 17:05:13.361 INFO  --- [main] cn.deercare.SpringBootMvnWebApplication Line:50  - Starting SpringBootMvnWebApplication on MacBook-Pro.local with PID 22108 (/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-web/target/classes started by jiangyuan in /Users/jiangyuan/JAVA/git/crowdfunding)
+2019-10-13 17:05:13.366 INFO  --- [main] cn.deercare.SpringBootMvnWebApplication Line:652 - The following profiles are active: pat
+2019-10-13 17:05:15.120 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-80"]
+2019-10-13 17:05:15.129 INFO  --- [main] org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2019-10-13 17:05:15.130 INFO  --- [main] org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-10-13 17:05:15.240 INFO  --- [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2019-10-13 17:05:17.194 INFO  --- [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:69  - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-10-13 17:05:17.899 INFO  --- [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:160 - Context refreshed
+2019-10-13 17:05:17.930 INFO  --- [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:163 - Found 1 custom documentation plugin(s)
+2019-10-13 17:05:17.986 INFO  --- [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner Line:41  - Scanning for api listing references
+2019-10-13 17:05:18.352 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-80"]
+2019-10-13 17:05:18.421 INFO  --- [main] cn.deercare.SpringBootMvnWebApplication Line:59  - Started SpringBootMvnWebApplication in 6.202 seconds (JVM running for 7.117)
+2019-10-13 17:05:36.035 INFO  --- [http-nio-80-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-13 17:05:36.138 INFO  --- [http-nio-80-exec-1] cn.deercare.controller.UserController Line:21  - >>用户登录
+2019-10-13 17:05:36.139 INFO  --- [http-nio-80-exec-1] cn.deercare.controller.UserController Line:22  - start
+2019-10-13 17:05:36.139 INFO  --- [http-nio-80-exec-1] cn.deercare.controller.UserController Line:78  - 查询用户
+2019-10-13 17:05:36.149 INFO  --- [http-nio-80-exec-1] cn.deercare.controller.UserController Line:97  - 微信用户登录
+2019-10-13 17:05:36.149 INFO  --- [http-nio-80-exec-1] cn.deercare.controller.UserController Line:100 - 获取openId信息
+2019-10-13 17:05:36.644 INFO  --- [http-nio-80-exec-1] cn.deercare.controller.UserController Line:26  - 登录失败，检测code码是否有效
+2019-10-13 17:05:36.645 INFO  --- [http-nio-80-exec-1] cn.deercare.controller.UserController Line:27  - end
+2019-10-13 17:06:00.970 INFO  --- [http-nio-80-exec-3] cn.deercare.controller.UserController Line:21  - >>用户登录
+2019-10-13 17:06:00.970 INFO  --- [http-nio-80-exec-3] cn.deercare.controller.UserController Line:22  - start
+2019-10-13 17:06:00.971 INFO  --- [http-nio-80-exec-3] cn.deercare.controller.UserController Line:78  - 查询用户
+2019-10-13 17:06:00.971 INFO  --- [http-nio-80-exec-3] cn.deercare.controller.UserController Line:97  - 微信用户登录
+2019-10-13 17:06:00.971 INFO  --- [http-nio-80-exec-3] cn.deercare.controller.UserController Line:100 - 获取openId信息
+2019-10-13 17:06:01.158 INFO  --- [http-nio-80-exec-3] cn.deercare.controller.UserController Line:107 - 获取openId为oWNYK4z5kiLWHy3B3LIVCwO2iouk
+2019-10-13 17:06:01.158 INFO  --- [http-nio-80-exec-3] cn.deercare.controller.UserController Line:108 - 从库中查询微信用户信息
+2019-10-13 17:06:01.312 INFO  --- [http-nio-80-exec-3] com.alibaba.druid.pool.DruidDataSource Line:1003 - {dataSource-1} inited
+2019-10-13 17:06:01.632 INFO  --- [http-nio-80-exec-3] cn.deercare.controller.UserController Line:135 - 微信用户在库中，则更新微信用户信息
+2019-10-13 17:06:01.668 INFO  --- [http-nio-80-exec-3] cn.deercare.controller.UserController Line:142 - 产生token并保存
+2019-10-13 17:06:01.755 INFO  --- [http-nio-80-exec-3] cn.deercare.controller.UserController Line:149 - 查询未验证的此用户参与的项目，并依次验证
+2019-10-13 17:06:01.777 INFO  --- [http-nio-80-exec-3] cn.deercare.controller.UserController Line:26  - 登录成功
+2019-10-13 17:06:01.778 INFO  --- [http-nio-80-exec-3] cn.deercare.controller.UserController Line:27  - end
+2019-10-13 17:06:12.592 INFO  --- [Thread-16] com.alibaba.druid.pool.DruidDataSource Line:1948 - {dataSource-1} closing ...
+2019-10-13 17:06:12.596 INFO  --- [Thread-16] com.alibaba.druid.pool.DruidDataSource Line:2020 - {dataSource-1} closed
+2019-10-13 17:25:34.168 INFO  --- [main] cn.deercare.SpringBootMvnWebApplication Line:50  - Starting SpringBootMvnWebApplication on MacBook-Pro.local with PID 22325 (/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-web/target/classes started by jiangyuan in /Users/jiangyuan/JAVA/git/crowdfunding)
+2019-10-13 17:25:34.175 INFO  --- [main] cn.deercare.SpringBootMvnWebApplication Line:652 - The following profiles are active: pat
+2019-10-13 17:25:36.125 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-80"]
+2019-10-13 17:25:36.133 INFO  --- [main] org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2019-10-13 17:25:36.133 INFO  --- [main] org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-10-13 17:25:36.220 INFO  --- [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2019-10-13 17:25:37.997 INFO  --- [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:69  - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-10-13 17:25:38.691 INFO  --- [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:160 - Context refreshed
+2019-10-13 17:25:38.708 INFO  --- [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:163 - Found 1 custom documentation plugin(s)
+2019-10-13 17:25:38.743 INFO  --- [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner Line:41  - Scanning for api listing references
+2019-10-13 17:25:39.052 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-80"]
+2019-10-13 17:25:39.095 INFO  --- [main] cn.deercare.SpringBootMvnWebApplication Line:59  - Started SpringBootMvnWebApplication in 5.87 seconds (JVM running for 6.748)
+2019-10-13 17:28:31.868 INFO  --- [Thread-15] com.alibaba.druid.pool.DruidDataSource Line:1948 - {dataSource-0} closing ...
+2019-10-13 17:28:40.752 INFO  --- [main] cn.deercare.SpringBootMvnWebApplication Line:50  - Starting SpringBootMvnWebApplication on MacBook-Pro.local with PID 22352 (/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-web/target/classes started by jiangyuan in /Users/jiangyuan/JAVA/git/crowdfunding)
+2019-10-13 17:28:40.758 INFO  --- [main] cn.deercare.SpringBootMvnWebApplication Line:652 - The following profiles are active: pat
+2019-10-13 17:28:42.692 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-80"]
+2019-10-13 17:28:42.699 INFO  --- [main] org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2019-10-13 17:28:42.700 INFO  --- [main] org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-10-13 17:28:42.790 INFO  --- [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2019-10-13 17:28:44.535 INFO  --- [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:69  - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-10-13 17:28:45.212 INFO  --- [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:160 - Context refreshed
+2019-10-13 17:28:45.236 INFO  --- [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:163 - Found 1 custom documentation plugin(s)
+2019-10-13 17:28:45.273 INFO  --- [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner Line:41  - Scanning for api listing references
+2019-10-13 17:28:45.511 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-80"]
+2019-10-13 17:28:45.552 INFO  --- [main] cn.deercare.SpringBootMvnWebApplication Line:59  - Started SpringBootMvnWebApplication in 5.919 seconds (JVM running for 7.068)
+2019-10-13 17:29:08.711 INFO  --- [http-nio-80-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-13 17:29:31.145 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:21  - >>用户登录
+2019-10-13 17:29:31.145 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:22  - start
+2019-10-13 17:29:31.146 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:78  - 查询用户
+2019-10-13 17:29:31.155 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:97  - 微信用户登录
+2019-10-13 17:29:31.155 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:100 - 获取openId信息
+2019-10-13 17:29:31.656 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:107 - 获取openId为oWNYK4z5kiLWHy3B3LIVCwO2iouk
+2019-10-13 17:29:31.656 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:108 - 从库中查询微信用户信息
+2019-10-13 17:29:31.787 INFO  --- [http-nio-80-exec-6] com.alibaba.druid.pool.DruidDataSource Line:1003 - {dataSource-1} inited
+2019-10-13 17:29:32.117 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:135 - 微信用户在库中，则更新微信用户信息
+2019-10-13 17:29:32.158 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:142 - 产生token并保存
+2019-10-13 17:29:32.230 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:149 - 查询未验证的此用户参与的项目，并依次验证
+2019-10-13 17:29:32.257 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:26  - 登录成功
+2019-10-13 17:29:32.257 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:27  - end
+2019-10-13 17:31:10.753 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:21  - >>用户登录
+2019-10-13 17:31:10.754 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:22  - start
+2019-10-13 17:31:10.754 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:78  - 查询用户
+2019-10-13 17:31:10.754 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:97  - 微信用户登录
+2019-10-13 17:31:10.754 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:100 - 获取openId信息
+2019-10-13 17:31:10.909 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:107 - 获取openId为oWNYK4z5kiLWHy3B3LIVCwO2iouk
+2019-10-13 17:31:10.909 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:108 - 从库中查询微信用户信息
+2019-10-13 17:31:10.988 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:135 - 微信用户在库中，则更新微信用户信息
+2019-10-13 17:31:11.094 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:142 - 产生token并保存
+2019-10-13 17:31:11.194 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:149 - 查询未验证的此用户参与的项目，并依次验证
+2019-10-13 17:31:11.210 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:26  - 登录成功
+2019-10-13 17:31:11.211 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.UserController Line:27  - end
+2019-10-13 17:31:26.469 INFO  --- [http-nio-80-exec-8] cn.deercare.controller.ProjectController Line:21  - >>众筹项目列表
+2019-10-13 17:31:26.469 INFO  --- [http-nio-80-exec-8] cn.deercare.controller.ProjectController Line:22  - start
+2019-10-13 17:31:31.844 INFO  --- [http-nio-80-exec-8] cn.deercare.controller.ProjectController Line:26  - 查询失败
+2019-10-13 17:31:31.845 INFO  --- [http-nio-80-exec-8] cn.deercare.controller.ProjectController Line:27  - end
+2019-10-13 17:32:15.401 INFO  --- [http-nio-80-exec-10] cn.deercare.controller.ProjectController Line:21  - >>众筹项目列表
+2019-10-13 17:32:15.402 INFO  --- [http-nio-80-exec-10] cn.deercare.controller.ProjectController Line:22  - start
+2019-10-13 17:32:18.326 INFO  --- [http-nio-80-exec-10] cn.deercare.controller.ProjectController Line:26  - 查询失败
+2019-10-13 17:32:18.326 INFO  --- [http-nio-80-exec-10] cn.deercare.controller.ProjectController Line:27  - end
+2019-10-13 17:32:20.120 INFO  --- [Thread-16] com.alibaba.druid.pool.DruidDataSource Line:1948 - {dataSource-1} closing ...
+2019-10-13 17:32:20.135 INFO  --- [Thread-16] com.alibaba.druid.pool.DruidDataSource Line:2020 - {dataSource-1} closed
+2019-10-13 17:34:04.442 INFO  --- [main] cn.deercare.SpringBootMvnWebApplication Line:50  - Starting SpringBootMvnWebApplication on MacBook-Pro.local with PID 22413 (/Users/jiangyuan/JAVA/git/crowdfunding/crowdfunding-web/target/classes started by jiangyuan in /Users/jiangyuan/JAVA/git/crowdfunding)
+2019-10-13 17:34:04.447 INFO  --- [main] cn.deercare.SpringBootMvnWebApplication Line:652 - The following profiles are active: pat
+2019-10-13 17:34:05.976 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-80"]
+2019-10-13 17:34:05.983 INFO  --- [main] org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2019-10-13 17:34:05.984 INFO  --- [main] org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-10-13 17:34:06.070 INFO  --- [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2019-10-13 17:34:07.780 INFO  --- [main] springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping Line:69  - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-10-13 17:34:08.668 INFO  --- [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:160 - Context refreshed
+2019-10-13 17:34:08.693 INFO  --- [main] springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper Line:163 - Found 1 custom documentation plugin(s)
+2019-10-13 17:34:08.730 INFO  --- [main] springfox.documentation.spring.web.scanners.ApiListingReferenceScanner Line:41  - Scanning for api listing references
+2019-10-13 17:34:09.010 INFO  --- [main] org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-80"]
+2019-10-13 17:34:09.049 INFO  --- [main] cn.deercare.SpringBootMvnWebApplication Line:59  - Started SpringBootMvnWebApplication in 5.59 seconds (JVM running for 6.533)
+2019-10-13 17:34:15.844 INFO  --- [http-nio-80-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-13 17:34:16.146 INFO  --- [http-nio-80-exec-1] com.alibaba.druid.pool.DruidDataSource Line:1003 - {dataSource-1} inited
+2019-10-13 17:34:16.474 INFO  --- [http-nio-80-exec-1] cn.deercare.controller.ProjectController Line:21  - >>众筹项目列表
+2019-10-13 17:34:16.475 INFO  --- [http-nio-80-exec-1] cn.deercare.controller.ProjectController Line:22  - start
+2019-10-13 17:34:19.284 INFO  --- [http-nio-80-exec-1] cn.deercare.controller.ProjectController Line:26  - 查询失败
+2019-10-13 17:34:19.285 INFO  --- [http-nio-80-exec-1] cn.deercare.controller.ProjectController Line:27  - end
+2019-10-13 17:34:25.444 INFO  --- [http-nio-80-exec-3] cn.deercare.controller.ProjectController Line:21  - >>众筹项目列表
+2019-10-13 17:34:25.444 INFO  --- [http-nio-80-exec-3] cn.deercare.controller.ProjectController Line:22  - start
+2019-10-13 17:34:25.638 INFO  --- [http-nio-80-exec-3] cn.deercare.controller.ProjectController Line:26  - 查询失败
+2019-10-13 17:34:25.639 INFO  --- [http-nio-80-exec-3] cn.deercare.controller.ProjectController Line:27  - end
+2019-10-13 17:34:26.684 INFO  --- [http-nio-80-exec-4] cn.deercare.controller.ProjectController Line:21  - >>众筹项目列表
+2019-10-13 17:34:26.684 INFO  --- [http-nio-80-exec-4] cn.deercare.controller.ProjectController Line:22  - start
+2019-10-13 17:34:26.766 INFO  --- [http-nio-80-exec-4] cn.deercare.controller.ProjectController Line:26  - 查询失败
+2019-10-13 17:34:26.766 INFO  --- [http-nio-80-exec-4] cn.deercare.controller.ProjectController Line:27  - end
+2019-10-13 17:35:00.466 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.ProjectController Line:21  - >>众筹项目列表
+2019-10-13 17:35:00.467 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.ProjectController Line:22  - start
+2019-10-13 17:36:18.665 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.ProjectController Line:26  - 查询失败
+2019-10-13 17:36:18.667 INFO  --- [http-nio-80-exec-6] cn.deercare.controller.ProjectController Line:27  - end
+2019-10-13 17:36:23.521 INFO  --- [http-nio-80-exec-8] cn.deercare.controller.ProjectController Line:21  - >>众筹项目列表
+2019-10-13 17:36:23.522 INFO  --- [http-nio-80-exec-8] cn.deercare.controller.ProjectController Line:22  - start
+2019-10-13 17:36:26.568 INFO  --- [http-nio-80-exec-8] cn.deercare.controller.ProjectController Line:26  - 查询成功
+2019-10-13 17:36:26.569 INFO  --- [http-nio-80-exec-8] cn.deercare.controller.ProjectController Line:27  - end
+2019-10-13 17:37:19.737 INFO  --- [Thread-14] com.alibaba.druid.pool.DruidDataSource Line:1948 - {dataSource-1} closing ...
+2019-10-13 17:37:19.741 INFO  --- [Thread-14] com.alibaba.druid.pool.DruidDataSource Line:2020 - {dataSource-1} closed
