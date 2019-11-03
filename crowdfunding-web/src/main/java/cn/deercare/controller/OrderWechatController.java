@@ -3,17 +3,18 @@ package cn.deercare.controller;
 
 import cn.deercare.finals.OrderState;
 import cn.deercare.finals.WechatPayVerification;
-import cn.deercare.model.Order;
-import cn.deercare.model.OrderWechat;
-import cn.deercare.model.UserProject;
+import cn.deercare.model.*;
 import cn.deercare.service.OrderService;
 import cn.deercare.service.OrderWechatService;
+import cn.deercare.service.ProjectService;
 import cn.deercare.service.UserProjectService;
 import cn.deercare.utils.StringUtil;
+import cn.deercare.wechat.api.WechatAPICall;
 import cn.deercare.wechat.api.WechatPayAPICall;
 import cn.deercare.wechat.finals.WechatAccountInfo;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -72,6 +73,8 @@ public class OrderWechatController extends BaseController {
     private OrderWechatService orderWechatService;
     @Autowired
     private OrderService orderService;
+    @Autowired
+    private ProjectService projectService;
 
     @PostMapping("notify")
     public Object notify(HttpServletRequest request, HttpServletResponse response){
@@ -99,6 +102,16 @@ public class OrderWechatController extends BaseController {
                         String orderNum = outTradeNo.getString("orderNum");
                         // 获取订单id
                         Long orderId = outTradeNo.getLong("orderId");
+                        // 获取项目名称
+                        String name = outTradeNo.getString("name");
+                        // 获取实付金额
+                        String amountPay = outTradeNo.getString("amount_pay");
+                        // 获取应付金额
+                        String amountPayable = outTradeNo.getString("amount_payable");
+                        // 获取支付时间
+                        String timePay = outTradeNo.getString("time_pay");
+                        // 获取用户的公众号openid
+                        String accountOpenid = outTradeNo.getString("account_openid");
                         // 保存通知信息
                         orderWechatService.update(Wrappers.<OrderWechat>update()
                                 .set("result_notify", strBuf.toString())
@@ -119,6 +132,12 @@ public class OrderWechatController extends BaseController {
                             orderService.update(Wrappers.<Order>update()
                                     .set("state", OrderState.ORDER_PAY)
                                     .eq("id", orderId));
+                            // 发送推送
+                            WechatAPICall.sendTemplateMessage(
+                                    WechatAccountInfo.DEERCARE_TEMPLATE_PAY_ID,
+                                    accountOpenid,null,
+                                    "我们已收到您的付款，感谢参与我们的项目","感谢您的支持！",
+                                    name, amountPayable, amountPay, orderNum, timePay);
                         }
                     }
                 }).start();

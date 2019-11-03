@@ -143,16 +143,18 @@ public class WechatAPICall {
             responseEntity = restTemplate.postForEntity(WechatIFSInfo.POST_TEMPLATE_MESSAGE_SEND, entity, String.class, parMap);
             result = responseEntity.getBody();
         }
-        // System.out.println(result);
+        logger.info(result);
     }
 
     // 是否需要重新获取access_token
     private static boolean getAgainAccessToken(String result){
         JSONObject jsonObject = JSONObject.parseObject(result);
-        if(jsonObject.getString("errcode") != null &&
-            jsonObject.getString("errcode").equals("40001")){
-            getAccessToken();
-            return true;
+        if(jsonObject.getString("errcode") != null){
+             if(jsonObject.getString("errcode").equals("40001")
+                     || jsonObject.getString("errcode").equals("41001") ){
+                 getAccessToken();
+                 return true;
+             }
         }
         return false;
     }

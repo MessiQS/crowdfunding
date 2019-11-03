@@ -1,13 +1,495 @@
-2019-10-27 15:36:33.533 ERROR --- [http-nio-8088-exec-1] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - io.jsonwebtoken.ExpiredJwtException: JWT expired at 2019-10-26T21:13:04Z. Current time: 2019-10-27T15:36:33Z, a difference of 66209533 milliseconds.  Allowed clock skew: 0 milliseconds.
-2019-10-27 16:45:07.062 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:120 - 错误---项目收益推送
-2019-10-27 16:45:07.065 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:121 - java.lang.ClassCastException: cn.deercare.model.UserWechat cannot be cast to java.lang.Comparable
-java.lang.ClassCastException: cn.deercare.model.UserWechat cannot be cast to java.lang.Comparable
-	at java.util.TreeMap.compare(TreeMap.java:1294)
-	at java.util.TreeMap.put(TreeMap.java:538)
-	at java.util.TreeSet.add(TreeSet.java:255)
-	at java.util.AbstractCollection.addAll(AbstractCollection.java:344)
-	at java.util.TreeSet.addAll(TreeSet.java:312)
-	at cn.deercare.job.ProjectJob.projectIncome(ProjectJob.java:101)
+2019-11-03 11:07:49.541 ERROR --- [main] org.apache.catalina.util.LifecycleBase Line:175 - Failed to start component [Connector[HTTP/1.1-443]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at cn.deercare.SpringBootMvnWebApplication.main(SpringBootMvnWebApplication.java:24)
+Caused by: java.lang.IllegalArgumentException: null
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:99)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:71)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:218)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 14 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at org.apache.tomcat.util.net.SSLUtilBase.getKeyManagers(SSLUtilBase.java:298)
+	at org.apache.tomcat.util.net.SSLUtilBase.createSSLContext(SSLUtilBase.java:247)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:97)
+	... 20 common frames omitted
+2019-11-03 11:07:49.610 ERROR --- [main] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter Line:40  - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 443 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 443, or configure this application to listen on another port.
+
+2019-11-03 11:09:53.150 ERROR --- [main] org.apache.catalina.util.LifecycleBase Line:175 - Failed to start component [Connector[HTTP/1.1-443]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at cn.deercare.SpringBootMvnWebApplication.main(SpringBootMvnWebApplication.java:24)
+Caused by: java.lang.IllegalArgumentException: null
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:99)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:71)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:218)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 14 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at org.apache.tomcat.util.net.SSLUtilBase.getKeyManagers(SSLUtilBase.java:298)
+	at org.apache.tomcat.util.net.SSLUtilBase.createSSLContext(SSLUtilBase.java:247)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:97)
+	... 20 common frames omitted
+2019-11-03 11:09:53.197 ERROR --- [main] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter Line:40  - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 443 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 443, or configure this application to listen on another port.
+
+2019-11-03 11:13:33.493 ERROR --- [main] org.apache.catalina.util.LifecycleBase Line:175 - Failed to start component [Connector[HTTP/1.1-443]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at cn.deercare.SpringBootMvnWebApplication.main(SpringBootMvnWebApplication.java:24)
+Caused by: java.lang.IllegalArgumentException: null
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:99)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:71)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:218)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 14 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at org.apache.tomcat.util.net.SSLUtilBase.getKeyManagers(SSLUtilBase.java:298)
+	at org.apache.tomcat.util.net.SSLUtilBase.createSSLContext(SSLUtilBase.java:247)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:97)
+	... 20 common frames omitted
+2019-11-03 11:13:33.553 ERROR --- [main] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter Line:40  - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 443 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 443, or configure this application to listen on another port.
+
+2019-11-03 11:15:36.756 ERROR --- [main] org.apache.catalina.util.LifecycleBase Line:175 - Failed to start component [Connector[HTTP/1.1-443]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at cn.deercare.SpringBootMvnWebApplication.main(SpringBootMvnWebApplication.java:24)
+Caused by: java.lang.IllegalArgumentException: null
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:99)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:71)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:218)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 14 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at org.apache.tomcat.util.net.SSLUtilBase.getKeyManagers(SSLUtilBase.java:298)
+	at org.apache.tomcat.util.net.SSLUtilBase.createSSLContext(SSLUtilBase.java:247)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:97)
+	... 20 common frames omitted
+2019-11-03 11:15:36.864 ERROR --- [main] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter Line:40  - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 443 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 443, or configure this application to listen on another port.
+
+2019-11-03 11:20:17.662 ERROR --- [main] org.apache.catalina.util.LifecycleBase Line:175 - Failed to start component [Connector[HTTP/1.1-443]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at cn.deercare.SpringBootMvnWebApplication.main(SpringBootMvnWebApplication.java:24)
+Caused by: java.lang.IllegalArgumentException: Keystore was tampered with, or password was incorrect
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:99)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:71)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:218)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 14 common frames omitted
+Caused by: java.io.IOException: Keystore was tampered with, or password was incorrect
+	at sun.security.provider.JavaKeyStore.engineLoad(JavaKeyStore.java:785)
+	at sun.security.provider.JavaKeyStore$JKS.engineLoad(JavaKeyStore.java:56)
+	at sun.security.provider.KeyStoreDelegator.engineLoad(KeyStoreDelegator.java:224)
+	at sun.security.provider.JavaKeyStore$DualFormatJKS.engineLoad(JavaKeyStore.java:70)
+	at java.security.KeyStore.load(KeyStore.java:1445)
+	at org.apache.tomcat.util.security.KeyStoreUtil.load(KeyStoreUtil.java:69)
+	at org.apache.tomcat.util.net.SSLUtilBase.getStore(SSLUtilBase.java:217)
+	at org.apache.tomcat.util.net.SSLHostConfigCertificate.getCertificateKeystore(SSLHostConfigCertificate.java:206)
+	at org.apache.tomcat.util.net.SSLUtilBase.getKeyManagers(SSLUtilBase.java:283)
+	at org.apache.tomcat.util.net.SSLUtilBase.createSSLContext(SSLUtilBase.java:247)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:97)
+	... 20 common frames omitted
+Caused by: java.security.UnrecoverableKeyException: Password verification failed
+	at sun.security.provider.JavaKeyStore.engineLoad(JavaKeyStore.java:783)
+	... 30 common frames omitted
+2019-11-03 11:20:17.725 ERROR --- [main] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter Line:40  - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 443 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 443, or configure this application to listen on another port.
+
+2019-11-03 11:20:48.223 ERROR --- [main] org.apache.catalina.util.LifecycleBase Line:175 - Failed to start component [Connector[HTTP/1.1-8443]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at cn.deercare.SpringBootMvnWebApplication.main(SpringBootMvnWebApplication.java:24)
+Caused by: java.lang.IllegalArgumentException: null
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:99)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:71)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:218)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 14 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at org.apache.tomcat.util.net.SSLUtilBase.getKeyManagers(SSLUtilBase.java:298)
+	at org.apache.tomcat.util.net.SSLUtilBase.createSSLContext(SSLUtilBase.java:247)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:97)
+	... 20 common frames omitted
+2019-11-03 11:20:48.279 ERROR --- [main] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter Line:40  - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8443 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8443, or configure this application to listen on another port.
+
+2019-11-03 11:21:11.955 ERROR --- [main] org.apache.catalina.util.LifecycleBase Line:175 - Failed to start component [Connector[HTTP/1.1-80]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at cn.deercare.SpringBootMvnWebApplication.main(SpringBootMvnWebApplication.java:24)
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:230)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:213)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 14 common frames omitted
+2019-11-03 11:21:12.015 ERROR --- [main] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter Line:40  - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 80 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 80, or configure this application to listen on another port.
+
+2019-11-03 11:25:32.060 ERROR --- [main] org.apache.catalina.util.LifecycleBase Line:175 - Failed to start component [Connector[HTTP/1.1-80]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at cn.deercare.SpringBootMvnWebApplication.main(SpringBootMvnWebApplication.java:24)
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:230)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:213)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 14 common frames omitted
+2019-11-03 11:25:32.116 ERROR --- [main] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter Line:40  - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 80 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 80, or configure this application to listen on another port.
+
+2019-11-03 11:27:52.025 ERROR --- [main] org.apache.catalina.util.LifecycleBase Line:175 - Failed to start component [Connector[HTTP/1.1-80]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at cn.deercare.SpringBootMvnWebApplication.main(SpringBootMvnWebApplication.java:24)
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:230)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:213)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 14 common frames omitted
+2019-11-03 11:27:52.081 ERROR --- [main] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter Line:40  - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 80 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 80, or configure this application to listen on another port.
+
+2019-11-03 11:29:07.894 ERROR --- [https-jsse-nio-80-exec-1] org.apache.coyote.http11.Http11NioProtocol Line:175 - Error reading request, ignored
+java.lang.NullPointerException: null
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.getSslSupport(NioEndpoint.java:1392)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1593)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-11-03 11:29:07.895 ERROR --- [https-jsse-nio-80-exec-1] org.apache.tomcat.util.net.NioEndpoint Line:175 - Error running socket processor
+java.lang.NullPointerException: null
+	at org.apache.coyote.http11.Http11InputBuffer.recycle(Http11InputBuffer.java:265)
+	at org.apache.coyote.http11.Http11Processor.recycle(Http11Processor.java:1331)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.release(AbstractProtocol.java:1055)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1023)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1593)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-11-03 11:29:08.072 ERROR --- [https-jsse-nio-80-exec-2] org.apache.coyote.http11.Http11NioProtocol Line:175 - Error reading request, ignored
+java.lang.NullPointerException: null
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.getSslSupport(NioEndpoint.java:1392)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1593)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-11-03 11:29:08.072 ERROR --- [https-jsse-nio-80-exec-2] org.apache.tomcat.util.net.NioEndpoint Line:175 - Error running socket processor
+java.lang.NullPointerException: null
+	at org.apache.coyote.http11.Http11InputBuffer.recycle(Http11InputBuffer.java:265)
+	at org.apache.coyote.http11.Http11Processor.recycle(Http11Processor.java:1331)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.release(AbstractProtocol.java:1055)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1023)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1593)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-11-03 11:34:27.616 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:129 - 错误---项目收益推送
+2019-11-03 11:34:28.501 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:130 - org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'where clause'
+### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,create_time,update_time,type,token  FROM t_user     WHERE (user_id = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'where clause'
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'where clause'
+### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,create_time,update_time,type,token  FROM t_user     WHERE (user_id = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'where clause'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:234)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:74)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy90.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:89)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:61)
+	at com.sun.proxy.$Proxy102.selectOne(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl.getOne(ServiceImpl.java:254)
+	at com.baomidou.mybatisplus.extension.service.IService.getOne(IService.java:192)
+	at com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:669)
+	at cn.deercare.service.impl.UserServiceImpl$$EnhancerBySpringCGLIB$$4b2f7424.getOne(<generated>)
+	at cn.deercare.job.ProjectJob.lambda$projectIncome$1(ProjectJob.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at cn.deercare.job.ProjectJob.projectIncome(ProjectJob.java:93)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -23,414 +505,7 @@ java.lang.ClassCastException: cn.deercare.model.UserWechat cannot be cast to jav
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-2019-10-27 16:45:07.065 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:123 - 结束项目收益推送
-2019-10-27 16:47:27.699 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:124 - 结束项目收益推送
-2019-10-27 16:50:35.732 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:121 - 结束项目收益推送
-2019-10-27 17:10:22.580 ERROR --- [http-nio-8088-exec-1] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:10:37.484 ERROR --- [http-nio-8088-exec-3] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:11:35.587 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:122 - 结束项目收益推送
-2019-10-27 17:11:52.372 ERROR --- [http-nio-8088-exec-7] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:12:10.793 ERROR --- [http-nio-8088-exec-9] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:12:29.857 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:122 - 结束项目收益推送
-2019-10-27 17:12:32.745 ERROR --- [http-nio-8088-exec-1] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:12:33.655 ERROR --- [http-nio-8088-exec-2] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:12:33.812 ERROR --- [http-nio-8088-exec-3] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:12:33.950 ERROR --- [http-nio-8088-exec-4] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:12:34.071 ERROR --- [http-nio-8088-exec-5] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:12:34.217 ERROR --- [http-nio-8088-exec-6] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:12:34.344 ERROR --- [http-nio-8088-exec-7] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:12:34.498 ERROR --- [http-nio-8088-exec-8] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:12:35.108 ERROR --- [http-nio-8088-exec-9] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:12:35.257 ERROR --- [http-nio-8088-exec-10] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:12:35.400 ERROR --- [http-nio-8088-exec-1] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:12:35.555 ERROR --- [http-nio-8088-exec-2] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:12:56.036 ERROR --- [http-nio-8088-exec-4] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:13:12.424 ERROR --- [http-nio-8088-exec-6] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:13:12.463 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:122 - 结束项目收益推送
-2019-10-27 17:14:05.519 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:123 - 结束项目收益推送
-2019-10-27 17:14:26.033 ERROR --- [http-nio-8088-exec-3] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:14:26.830 ERROR --- [http-nio-8088-exec-4] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:14:26.955 ERROR --- [http-nio-8088-exec-5] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:14:27.078 ERROR --- [http-nio-8088-exec-6] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:14:27.203 ERROR --- [http-nio-8088-exec-7] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:14:27.319 ERROR --- [http-nio-8088-exec-8] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:14:27.457 ERROR --- [http-nio-8088-exec-9] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:14:27.581 ERROR --- [http-nio-8088-exec-10] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:14:27.692 ERROR --- [http-nio-8088-exec-1] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:14:28.965 ERROR --- [http-nio-8088-exec-2] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:14:29.426 ERROR --- [http-nio-8088-exec-3] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:14:29.577 ERROR --- [http-nio-8088-exec-4] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:14:29.718 ERROR --- [http-nio-8088-exec-5] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:14:29.880 ERROR --- [http-nio-8088-exec-6] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:14:30.043 ERROR --- [http-nio-8088-exec-7] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:14:30.706 ERROR --- [http-nio-8088-exec-8] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:14:31.322 ERROR --- [http-nio-8088-exec-9] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:14:32.979 ERROR --- [http-nio-8088-exec-10] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:14:33.785 ERROR --- [http-nio-8088-exec-1] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:15:06.975 ERROR --- [http-nio-8088-exec-3] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:15:10.079 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:123 - 结束项目收益推送
-2019-10-27 17:15:33.431 ERROR --- [http-nio-8088-exec-5] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-2019-10-27 17:16:02.936 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:123 - 结束项目收益推送
-2019-10-27 17:16:04.554 ERROR --- [http-nio-8088-exec-1] cn.deercare.interceptor.AuthenticationInterceptor Line:128 - org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: SELECT id,create_time,update_time,type,main_id,token FROM t_user WHERE id=?
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
-	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:234)
-	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
-	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:74)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
-	at com.sun.proxy.$Proxy90.selectOne(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:89)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:61)
-	at com.sun.proxy.$Proxy102.selectById(Unknown Source)
-	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl.getById(ServiceImpl.java:238)
-	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl$$FastClassBySpringCGLIB$$76535273.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:669)
-	at cn.deercare.service.impl.UserServiceImpl$$EnhancerBySpringCGLIB$$fc1c9e16.getById(<generated>)
-	at cn.deercare.interceptor.AuthenticationInterceptor.preHandle(AuthenticationInterceptor.java:115)
-	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:136)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1034)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at com.github.xiaoymin.swaggerbootstrapui.filter.SecurityBasicAuthFilter.doFilter(SecurityBasicAuthFilter.java:84)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at com.github.xiaoymin.swaggerbootstrapui.filter.ProductionSecurityFilter.doFilter(ProductionSecurityFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field list'
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'where clause'
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
 	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
@@ -442,7 +517,7 @@ Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field 
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
-	at com.sun.proxy.$Proxy127.execute(Unknown Source)
+	at com.sun.proxy.$Proxy126.execute(Unknown Source)
 	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
 	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
 	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:67)
@@ -458,7 +533,7 @@ Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field 
 	at com.github.pagehelper.SqlUtil.processPage(SqlUtil.java:374)
 	at com.github.pagehelper.PageHelper.intercept(PageHelper.java:254)
 	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
-	at com.sun.proxy.$Proxy125.query(Unknown Source)
+	at com.sun.proxy.$Proxy124.query(Unknown Source)
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
@@ -467,11 +542,356 @@ Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'main_id' in 'field 
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
-	... 66 common frames omitted
-2019-10-27 17:18:00.065 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:123 - 结束项目收益推送
-2019-10-27 17:19:00.089 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:123 - 结束项目收益推送
-2019-10-27 17:20:00.076 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:123 - 结束项目收益推送
-2019-10-27 17:21:00.051 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:123 - 结束项目收益推送
-2019-10-27 17:22:00.048 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:123 - 结束项目收益推送
-2019-10-27 17:23:00.050 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:123 - 结束项目收益推送
-2019-10-27 17:24:00.054 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:123 - 结束项目收益推送
+	... 29 common frames omitted
+2019-11-03 11:36:52.542 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:129 - 错误---项目收益推送
+2019-11-03 11:36:52.543 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:130 - org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'where clause'
+### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,create_time,update_time,type,token  FROM t_user     WHERE (user_id = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'where clause'
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'where clause'
+### The error may exist in cn/deercare/mapper/UserMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,create_time,update_time,type,token  FROM t_user     WHERE (user_id = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'where clause'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:234)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:74)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy90.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:89)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:61)
+	at com.sun.proxy.$Proxy102.selectOne(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl.getOne(ServiceImpl.java:254)
+	at com.baomidou.mybatisplus.extension.service.IService.getOne(IService.java:192)
+	at com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:669)
+	at cn.deercare.service.impl.UserServiceImpl$$EnhancerBySpringCGLIB$$4b2f7424.getOne(<generated>)
+	at cn.deercare.job.ProjectJob.lambda$projectIncome$1(ProjectJob.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at cn.deercare.job.ProjectJob.projectIncome(ProjectJob.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:955)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:372)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy126.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:136)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.github.pagehelper.SqlUtil._processPage(SqlUtil.java:401)
+	at com.github.pagehelper.SqlUtil.processPage(SqlUtil.java:374)
+	at com.github.pagehelper.PageHelper.intercept(PageHelper.java:254)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy124.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 29 common frames omitted
+2019-11-03 11:38:11.059 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:129 - 错误---项目收益推送
+2019-11-03 11:38:13.426 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:130 - org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+### The error may exist in cn/deercare/mapper/UserWechatMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,country,qr_scene_str,qr_scene,unionid,subscribe_time,gender,city,remark,language,type,province,program_openid,account_openid,nickname,subscribe_scene,session_key,subscribe,avatarUrl,groupid,update_time,user_id,token,create_time,tagid_list  FROM t_user_wechat     WHERE (user_id = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+### The error may exist in cn/deercare/mapper/UserWechatMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,country,qr_scene_str,qr_scene,unionid,subscribe_time,gender,city,remark,language,type,province,program_openid,account_openid,nickname,subscribe_scene,session_key,subscribe,avatarUrl,groupid,update_time,user_id,token,create_time,tagid_list  FROM t_user_wechat     WHERE (user_id = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:234)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:74)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy90.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:89)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:61)
+	at com.sun.proxy.$Proxy103.selectOne(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl.getOne(ServiceImpl.java:254)
+	at com.baomidou.mybatisplus.extension.service.IService.getOne(IService.java:192)
+	at com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:669)
+	at cn.deercare.service.impl.UserWechatServiceImpl$$EnhancerBySpringCGLIB$$8b0877eb.getOne(<generated>)
+	at cn.deercare.job.ProjectJob.lambda$projectIncome$1(ProjectJob.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at cn.deercare.job.ProjectJob.projectIncome(ProjectJob.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:955)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:372)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy126.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:136)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.github.pagehelper.SqlUtil._processPage(SqlUtil.java:401)
+	at com.github.pagehelper.SqlUtil.processPage(SqlUtil.java:374)
+	at com.github.pagehelper.PageHelper.intercept(PageHelper.java:254)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy124.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 29 common frames omitted
+2019-11-03 11:40:32.286 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:129 - 错误---项目收益推送
+2019-11-03 11:40:32.286 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:130 - org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+### The error may exist in cn/deercare/mapper/UserWechatMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,country,qr_scene_str,qr_scene,unionid,subscribe_time,gender,city,remark,language,type,province,program_openid,account_openid,nickname,subscribe_scene,session_key,subscribe,avatarUrl,groupid,update_time,user_id,token,create_time,tagid_list  FROM t_user_wechat     WHERE (user_id = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+### The error may exist in cn/deercare/mapper/UserWechatMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,country,qr_scene_str,qr_scene,unionid,subscribe_time,gender,city,remark,language,type,province,program_openid,account_openid,nickname,subscribe_scene,session_key,subscribe,avatarUrl,groupid,update_time,user_id,token,create_time,tagid_list  FROM t_user_wechat     WHERE (user_id = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:234)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:74)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy90.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:89)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:61)
+	at com.sun.proxy.$Proxy103.selectOne(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl.getOne(ServiceImpl.java:254)
+	at com.baomidou.mybatisplus.extension.service.IService.getOne(IService.java:192)
+	at com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:669)
+	at cn.deercare.service.impl.UserWechatServiceImpl$$EnhancerBySpringCGLIB$$8b0877eb.getOne(<generated>)
+	at cn.deercare.job.ProjectJob.lambda$projectIncome$1(ProjectJob.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at cn.deercare.job.ProjectJob.projectIncome(ProjectJob.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:955)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:372)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy126.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:136)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.github.pagehelper.SqlUtil._processPage(SqlUtil.java:401)
+	at com.github.pagehelper.SqlUtil.processPage(SqlUtil.java:374)
+	at com.github.pagehelper.PageHelper.intercept(PageHelper.java:254)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy124.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 29 common frames omitted
+2019-11-03 11:44:24.365 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:129 - 错误---项目收益推送
+2019-11-03 11:44:24.370 ERROR --- [scheduling-1] cn.deercare.job.ProjectJob Line:130 - org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+### The error may exist in cn/deercare/mapper/UserWechatMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,country,qr_scene_str,qr_scene,unionid,subscribe_time,gender,city,remark,language,type,province,program_openid,account_openid,nickname,subscribe_scene,session_key,subscribe,avatarUrl,groupid,update_time,user_id,token,create_time,tagid_list  FROM t_user_wechat     WHERE (user_id = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+### The error may exist in cn/deercare/mapper/UserWechatMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,country,qr_scene_str,qr_scene,unionid,subscribe_time,gender,city,remark,language,type,province,program_openid,account_openid,nickname,subscribe_scene,session_key,subscribe,avatarUrl,groupid,update_time,user_id,token,create_time,tagid_list  FROM t_user_wechat     WHERE (user_id = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:234)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:74)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy90.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:89)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:61)
+	at com.sun.proxy.$Proxy103.selectOne(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.impl.ServiceImpl.getOne(ServiceImpl.java:254)
+	at com.baomidou.mybatisplus.extension.service.IService.getOne(IService.java:192)
+	at com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:669)
+	at cn.deercare.service.impl.UserWechatServiceImpl$$EnhancerBySpringCGLIB$$91ff6332.getOne(<generated>)
+	at cn.deercare.job.ProjectJob.lambda$projectIncome$1(ProjectJob.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at cn.deercare.job.ProjectJob.projectIncome(ProjectJob.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'type' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:955)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:372)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy126.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:136)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.github.pagehelper.SqlUtil._processPage(SqlUtil.java:401)
+	at com.github.pagehelper.SqlUtil.processPage(SqlUtil.java:374)
+	at com.github.pagehelper.PageHelper.intercept(PageHelper.java:254)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy124.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 29 common frames omitted

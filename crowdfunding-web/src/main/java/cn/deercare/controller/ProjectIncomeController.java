@@ -114,14 +114,14 @@ public class ProjectIncomeController extends BaseController {
         return json;
     }
 
-    @GetMapping("web/{openId}/{date}")
-    @ApiOperation(value = "推送网页内容", notes = "", response = RestResult.class)
+    @GetMapping("detailed/{openId}/{date}")
+    @ApiOperation(value = "个人项目收益详细", notes = "", response = RestResult.class)
     @ApiImplicitParams({
             @ApiImplicitParam(paramType="path", name = "openId", value = "用户openId", required = true, dataTypeClass = String.class),
             @ApiImplicitParam(paramType="path", name = "date", value = "收益日期", required = true, dataTypeClass = String.class),
     })
     @Authorization
-    public Object webProjectIncome(@PathVariable("openId") String openId, @PathVariable("date")String date,
+    public Object projectIncomeDetailedByOne(@PathVariable("openId") String openId, @PathVariable("date")String date,
                                    HttpServletRequest request){
         Map<String, Object> json = createJson();
         logBefore(logger, "项目收益网页推送");

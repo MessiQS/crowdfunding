@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import cn.deercare.model.BaseModel;
 import com.baomidou.mybatisplus.annotation.TableId;
+
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -48,6 +50,12 @@ public class User extends BaseModel {
     private LocalDateTime createTime;
 
     private LocalDateTime updateTime;
+
+    /**
+     * 用户今日收益
+     */
+    @TableField(exist = false)
+    private BigDecimal income = new BigDecimal(0);
 
     public User(){}
     public User(Long id){

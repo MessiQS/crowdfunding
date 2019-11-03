@@ -1,6 +1,14 @@
-server:  
-  port: 8088
+server:
+  port: 443 #端口号
   connection-timeout: 3000
+  ssl.key-store: classpath:ssl/deercare.cn.jks #你生成的证书名字
+  ssl.key-store-password: 24jv800c953aj
+  ssl.key-store-type: JKS
+
+  #ssl.key-store-password: on3AFqO8 #密钥库密码
+  #ssl.key-store-password: ExCcLpog
+  #ssl.key-store-password: ExczFc67
+
 
 
 logging:
@@ -46,4 +54,4 @@ schedules:
   # userWechatInfo: 0 */3 * * * ?
   userWechatInfo: 0 0 2 * * ?
   projectPaySuccess: 0 0 12 * * ?
-  projectIncome: 0 0 12 * * ?
+  projectIncome: 0 */2 * * * ?

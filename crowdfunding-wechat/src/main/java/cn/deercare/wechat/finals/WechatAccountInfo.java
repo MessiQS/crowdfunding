@@ -8,9 +8,20 @@ public class WechatAccountInfo {
 
     public static final String DEERCARE_APP_SECRET = "d518e3d6bdbf37c30c548ef461dadab1";
 
-    // 项目收益推送模板
-    public static final String DEERCARE_TEMPLATE_CASH_OUT_IDCash_ID = "diqIVvf_JRDQbGph9GlOCeMXwxGX2EASlptFL5MOAiU";
-
+    // 项目状态变更
+    public static final String DEERCARE_TEMPLATE_STATECHANGE_ID = "TjvcpLf7ZUgVjYSebwF7qXKc8lfWD_ilMIIzu5F5nkU";
+    // 项目众筹失败
+    public static final String DEERCARE_TEMPLATE_FAIL_ID = "DhHXS8BNsJLeykfA6MHHIIMyNjJEiWOuSc20P2gU56E";
+    // 项目众筹成功
+    public static final String DEERCARE_TEMPLATE_SUCCESS_ID = "KlMIiQ8icZ23aGoj2ihenP_Lga1Dq1B3JEKRMgjlw8w";
+    // 项目收益
+    public static final String DEERCARE_TEMPLATE_INCOME_ID = "cUua00yeKc_WpOF2fyQU5sWFvL0KmwcV2AxDEJ84WYo";
+    // 项目消费成功通知
+    public static final String DEERCARE_TEMPLATE_PAY_ID = "aKCLt5D3junUl1Uvq9Mj_nwwUKgoffikGJ71PJ1UJ-8";
+    // 项目提现通知
+    public static final String DEERCARE_TEMPLATE_ENCHASHMENT_ID = "pPM3YaTWvhtmV_rjPrNLMl5GVUnOepU_b3JmwDjeCIE";
+    // 项目众筹失败退款
+    public static final String DEERCARE_TEMPLATE_REFUND_ID = "tCxlpa0xUC3KXVSVT7DDlqoiJcmyYWCmMGrrvVHMzPg";
 
     // --------- 小程序信息
     public static final String DEERCARE_PROGRAM_APP_ID = "wx4436516d451b7de9";

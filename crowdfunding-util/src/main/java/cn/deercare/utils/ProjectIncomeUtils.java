@@ -1,6 +1,7 @@
 package cn.deercare.utils;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import static java.math.BigDecimal.ROUND_HALF_UP;
 
@@ -17,8 +18,9 @@ public class ProjectIncomeUtils {
      * @return 某人该项目收益
      */
     public static BigDecimal getIncomeByOne(BigDecimal amount, BigDecimal proportionAmount){
-        return amount.multiply(cn.deercare.finals.ProjectIncome.PLATFORM_PROPORTION)
+        BigDecimal incmoe = amount.multiply(cn.deercare.finals.ProjectIncome.PLATFORM_PROPORTION)
                 .multiply(proportionAmount.multiply(new BigDecimal(0.01)));
+        return incmoe.setScale(1, RoundingMode.FLOOR);
     }
 
     /**

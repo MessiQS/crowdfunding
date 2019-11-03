@@ -131,10 +131,11 @@ public class Test {
 
     // {"total":4,"count":4,"data":{"openid":["oPBltwI1mcGmi63mNbeU50sQ6L1E","oPBltwLMmQyGXkgP36Q-5lSc1wNI","oPBltwH_gixEag8Ep69bPPqCOAhg","oPBltwF9pYPuA327c7LjghSbEVs0"]},"next_openid":"oPBltwF9pYPuA327c7LjghSbEVs0"}
     public static void main(String[] args) {
+
         // send();
         // sendmsg("fff","1111","lll");
        // openList();
-          getUserInfo();
+          // getUserInfo();
        // getUserInfoByProgram();
   //      String k = "{\"errcode\":41001,\"errmsg\":\"access_token missing hint: [JSf.kA03387108!]\"}";
 //        System.out.println(JSONObject.parseObject(k).getString("errmsg2").equals("11"));

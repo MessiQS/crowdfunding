@@ -6,6 +6,7 @@ import cn.deercare.mapper.OrderWechatMapper;
 import cn.deercare.mapper.UserProjectMapper;
 import cn.deercare.model.*;
 import cn.deercare.mapper.ProjectPaymentMapper;
+import cn.deercare.service.OrderService;
 import cn.deercare.service.ProjectPaymentService;
 import cn.deercare.utils.AmountUtils;
 import cn.deercare.utils.SnowflakeIdWorker;
@@ -13,6 +14,7 @@ import cn.deercare.utils.StringUtil;
 import cn.deercare.utils.UserUtil;
 import cn.deercare.wechat.api.WechatPayAPICall;
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import net.sf.jsqlparser.util.deparser.OrderByDeParser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,6 +65,8 @@ public class ProjectPaymentServiceImpl extends ServiceImpl<ProjectPaymentMapper,
         // 保存订单信息
         Order order = new Order(projectHotel.getName(), 1, amount, amount, 1, orderNum);
         orderMapper.insert(order);
+        // 重新查询订单信息
+        order = orderMapper.selectOne(Wrappers.<Order>query().eq("number", orderNum));
         // 计算本次投资占比(本次金额/目标金额*100,保留小数点后1位，其他砍掉，不适用四舍五入)
         Double proportion = amount.divide(projectHotel.getAmount(), 1, RoundingMode.FLOOR).multiply(new BigDecimal(new Integer(100).toString())).doubleValue();
         // 建立用户与众筹项目的关系
@@ -71,8 +75,20 @@ public class ProjectPaymentServiceImpl extends ServiceImpl<ProjectPaymentMapper,
         userProjectMapper.insert(userProject);
         // 微信附加数据
         JSONObject json = new JSONObject();
+        // 订单号
         json.put("orderNum", orderNum);
+        // 订单id
         json.put("orderId", order.getId());
+        // 实付金额
+        json.put("amount_pay", amount);
+        // 应付金额
+        json.put("amount_payable", amount);
+        // 项目名称
+        json.put("name", projectHotel.getName());
+        // 支付时间
+        json.put("time_pay", order.getCreateTime());
+        // 用户的公众号openid
+        json.put("account_openid", userWechat.getAccountOpenid());
         json.put("userProjectId", userProject.getId());
         // 调用微信支付统一下单接口
         List<Object> list = WechatPayAPICall.unifiedOrder(

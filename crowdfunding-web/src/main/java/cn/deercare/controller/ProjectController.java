@@ -29,6 +29,8 @@ import cn.deercare.service.ProjectService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.text.MessageFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -172,28 +174,48 @@ public class ProjectController extends BaseController {
         userList.forEach(user ->{
             if(user instanceof UserWechat){
                 UserWechat uw = (UserWechat) user;
+                String stateChangeTitle = "您参与的项目状态已经发生改变";
+                String create = "小鹿健康";
                 // 根据状态发送推送
                 switch (nextProjectHotelSate){
+                    case S:
+                        // 创建时间转日期格式
+                        LocalDate createDate = projectHotel.getCreateTime().toLocalDate();
+                        // 众筹成功
+                        WechatAPICall.sendTemplateMessage(
+                                WechatAccountInfo.DEERCARE_TEMPLATE_SUCCESS_ID,
+                                uw.getAccountOpenid(),null,
+                                "您参与的项目已众筹成功","感谢您的支持！",projectHotel.getName(),
+                                createDate.toString(), LocalDate.now().toString());
+                        break;
+                    case F:
+                        // 众筹失败
+                        WechatAPICall.sendTemplateMessage(
+                                WechatAccountInfo.DEERCARE_TEMPLATE_FAIL_ID,
+                                uw.getAccountOpenid(),null,
+                                "很抱歉，你所参与的众筹失败了","",projectHotel.getName(),
+                                "失败", "7个工作日内");
+                        break;
                     case P:
                         // 发送工厂生产推送
                         WechatAPICall.sendTemplateMessage(
-                                WechatAccountInfo.DEERCARE_TEMPLATE_CASH_OUT_IDCash_ID,
-                                "oPBltwI1mcGmi63mNbeU50sQ6L1E","https://www.baidu.com/",
-                                "工厂生产","remark","key1","key2","key3","key4");
+                                WechatAccountInfo.DEERCARE_TEMPLATE_STATECHANGE_ID,
+                                uw.getAccountOpenid(), null,
+                                stateChangeTitle,"",projectHotel.getName(), create, "工厂生产", "预计14天内完成");
                         break;
                     case L:
                         // 发送酒店铺设推送
                         WechatAPICall.sendTemplateMessage(
-                                WechatAccountInfo.DEERCARE_TEMPLATE_CASH_OUT_IDCash_ID,
-                                "oPBltwI1mcGmi63mNbeU50sQ6L1E","https://www.baidu.com/",
-                                "酒店铺设","remark","key1","key2","key3","key4");
+                                WechatAccountInfo.DEERCARE_TEMPLATE_STATECHANGE_ID,
+                                uw.getAccountOpenid(), null,
+                                stateChangeTitle,"",projectHotel.getName(), create, "酒店铺设", "预计14天内完成");
                         break;
                     case O:
                         // 发送正式运营推送
                         WechatAPICall.sendTemplateMessage(
-                                WechatAccountInfo.DEERCARE_TEMPLATE_CASH_OUT_IDCash_ID,
-                                "oPBltwI1mcGmi63mNbeU50sQ6L1E","https://www.baidu.com/",
-                                "正式运行","remark","key1","key2","key3","key4");
+                                WechatAccountInfo.DEERCARE_TEMPLATE_STATECHANGE_ID,
+                                uw.getAccountOpenid(), null,
+                                stateChangeTitle,"",projectHotel.getName(), create, "正式运营", "无");
                         break;
                 }
                 /*
@@ -223,7 +245,11 @@ public class ProjectController extends BaseController {
     }
 
     public static void main(String[] args) {
-        String k = String.format(MessageFormat.format("fffff{0}", "----"));
+        LocalDate k = null;
+        LocalDateTime l = LocalDateTime.now();
+        System.out.println(l);
+        System.out.println(k);
+        k = l.toLocalDate();
         System.out.println(k);
     }
 }

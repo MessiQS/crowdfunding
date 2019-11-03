@@ -1,4 +1,4 @@
 spring:
   profiles:
-    active: pat
+    active: dev
 # DEVOPS_HOME: /docker/var/conf

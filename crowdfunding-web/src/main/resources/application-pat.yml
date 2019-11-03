@@ -1,6 +1,13 @@
-server:  
-  port: 80
+server:
+  port: 443 #端口号
   connection-timeout: 3000
+  ssl.key-store: classpath:ssl/deercare.cn.jks #你生成的证书名字
+  ssl.key-store-password: 24jv800c953aj
+  ssl.key-store-type: JKS
+
+  #ssl.key-store-password: on3AFqO8 #密钥库密码
+  #ssl.key-store-password: ExCcLpog
+  #ssl.key-store-password: ExczFc67
 
 
 logging:
