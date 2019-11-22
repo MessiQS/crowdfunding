@@ -1,7 +1,7 @@
 package cn.deercare.service.impl;
 
 import cn.deercare.enums.ProjectType;
-import cn.deercare.finals.WechatPayVerification;
+import cn.deercare.finals.wechat.WechatPayVerification;
 import cn.deercare.mapper.ProjectHotelMapper;
 import cn.deercare.mapper.ProjectMapper;
 import cn.deercare.mapper.ProjectPaymentMapper;

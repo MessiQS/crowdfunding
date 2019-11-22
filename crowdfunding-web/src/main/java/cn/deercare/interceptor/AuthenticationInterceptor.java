@@ -8,6 +8,7 @@ import cn.deercare.service.UserService;
 import cn.deercare.utils.SpringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
@@ -123,6 +124,8 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
 					tokenError(response, unauthorizedErrorCode403, unauthorizedErrorMessage403);
 					return false;
 				}
+				// 日志追踪
+				MDC.put("logger_trace", user.getMainId().toString());
 				return true;
 			}catch (Exception e) {
 				logger.error(e.toString(), e);

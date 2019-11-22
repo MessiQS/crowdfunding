@@ -24,7 +24,7 @@ public class UserUtil {
         return null;
     }
 
-    public static User getUser(HttpServletRequest request){
+    public static <T extends User> T getUser(HttpServletRequest request){
         String token = request.getHeader("Authorization");
         UserService userService = SpringUtil.getBean(UserService.class);
         // 查询user信息
@@ -36,7 +36,7 @@ public class UserUtil {
         // 判断user类型
         switch (getUserType(Integer.parseInt(TokenUtils.getUserType(token)))){
             case WECHAT:
-                 return getUserWechat(user, request);
+                 return (T) getUserWechat(user, request);
         }
         return null;
     }
@@ -46,6 +46,7 @@ public class UserUtil {
         UserWechat userWechat = userWechatService.getOne(Wrappers.<UserWechat>query()
                 .eq("user_id", TokenUtils.getUserId(request.getHeader("Authorization")))
                 .select("*"));
+        userWechat.setUser(user);
         return userWechat;
     }
 

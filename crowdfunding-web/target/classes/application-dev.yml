@@ -54,4 +54,4 @@ schedules:
   # userWechatInfo: 0 */3 * * * ?
   userWechatInfo: 0 0 2 * * ?
   projectPaySuccess: 0 0 12 * * ?
-  projectIncome: 0 */2 * * * ?
+  projectIncome: 0 0 12 * * ?

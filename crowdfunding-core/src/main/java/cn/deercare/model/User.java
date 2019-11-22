@@ -47,6 +47,8 @@ public class User extends BaseModel {
 
     private String token;
 
+    private BigDecimal amount;
+
     private LocalDateTime createTime;
 
     private LocalDateTime updateTime;

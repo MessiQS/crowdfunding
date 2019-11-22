@@ -1,9 +1,9 @@
 package cn.deercare.wechat.api;
 
 
+import cn.deercare.finals.wechat.WechatAccountInfo;
+import cn.deercare.finals.wechat.WechatIFSInfo;
 import cn.deercare.over.RestTemplate;
-import cn.deercare.wechat.finals.WechatAccountInfo;
-import cn.deercare.wechat.finals.WechatIFSInfo;
 import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

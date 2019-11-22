@@ -1,16 +1,14 @@
 package cn.deercare.wechat.api;
 
+import cn.deercare.finals.wechat.WechatAccountInfo;
+import cn.deercare.finals.wechat.WechatIFSInfo;
 import cn.deercare.over.RestTemplate;
-import cn.deercare.wechat.finals.WechatAccountInfo;
-import cn.deercare.wechat.finals.WechatIFSInfo;
-import com.alibaba.druid.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +21,7 @@ public class Test {
         Map<String, Object> parMap = new HashMap<String, Object>();
         parMap.clear();
         parMap.put("APPID", WechatAccountInfo.DEERCARE_APP_ID);
-        parMap.put("APPSECRET",WechatAccountInfo.DEERCARE_APP_SECRET);
+        parMap.put("APPSECRET", WechatAccountInfo.DEERCARE_APP_SECRET);
         String result = restTemplate.getForObject(WechatIFSInfo.GET_ACCESS_TOKEN_URL, String.class, parMap);
         String accestoken = JSONObject.parseObject(result).getString("access_token");
 

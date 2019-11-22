@@ -1,6 +1,6 @@
 package cn.deercare.model;
 
-import cn.deercare.wechat.finals.WechatAccountInfo;
+import cn.deercare.finals.wechat.WechatAccountInfo;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import cn.deercare.model.BaseModel;
@@ -48,6 +48,11 @@ public class OrderWechat extends BaseModel {
      * 微信通知
      */
     private String resultNotify;
+
+    /**
+     * 微信付款到零钱返回
+     */
+    private String resultSmallchange;
 
     /**
      * 微信支付状态

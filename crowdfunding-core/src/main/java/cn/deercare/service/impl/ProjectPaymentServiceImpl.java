@@ -63,7 +63,7 @@ public class ProjectPaymentServiceImpl extends ServiceImpl<ProjectPaymentMapper,
         // 生产系统内部订单号
         String orderNum = String.valueOf(new SnowflakeIdWorker(OrderNumberFinal.WORKER_ID, OrderNumberFinal.DATA_CENTER_ID).nextId());
         // 保存订单信息
-        Order order = new Order(projectHotel.getName(), 1, amount, amount, 1, orderNum);
+        Order order = Order.getCommonOrder(projectHotel.getName(), amount, amount, userWechat.getMainId());
         orderMapper.insert(order);
         // 重新查询订单信息
         order = orderMapper.selectOne(Wrappers.<Order>query().eq("number", orderNum));
@@ -75,18 +75,10 @@ public class ProjectPaymentServiceImpl extends ServiceImpl<ProjectPaymentMapper,
         userProjectMapper.insert(userProject);
         // 微信附加数据
         JSONObject json = new JSONObject();
-        // 订单号
-        json.put("orderNum", orderNum);
         // 订单id
         json.put("orderId", order.getId());
-        // 实付金额
-        json.put("amount_pay", amount);
-        // 应付金额
-        json.put("amount_payable", amount);
         // 项目名称
         json.put("name", projectHotel.getName());
-        // 支付时间
-        json.put("time_pay", order.getCreateTime());
         // 用户的公众号openid
         json.put("account_openid", userWechat.getAccountOpenid());
         json.put("userProjectId", userProject.getId());

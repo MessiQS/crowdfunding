@@ -1,8 +1,9 @@
 package cn.deercare.controller;
 
 
-import cn.deercare.finals.OrderState;
-import cn.deercare.finals.WechatPayVerification;
+import cn.deercare.finals.OrderFinals;
+import cn.deercare.finals.wechat.WechatAccountInfo;
+import cn.deercare.finals.wechat.WechatPayVerification;
 import cn.deercare.model.*;
 import cn.deercare.service.OrderService;
 import cn.deercare.service.OrderWechatService;
@@ -11,17 +12,13 @@ import cn.deercare.service.UserProjectService;
 import cn.deercare.utils.StringUtil;
 import cn.deercare.wechat.api.WechatAPICall;
 import cn.deercare.wechat.api.WechatPayAPICall;
-import cn.deercare.wechat.finals.WechatAccountInfo;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
-
-import io.swagger.annotations.Api;
 
 import cn.deercare.controller.base.BaseController;
 import springfox.documentation.annotations.ApiIgnore;
@@ -98,27 +95,21 @@ public class OrderWechatController extends BaseController {
                     public void run() {
                         // 获取预留的信息
                         JSONObject outTradeNo = JSONObject.parseObject(String.valueOf(resultMap.get("attach")));
-                        // 获取订单号码
-                        String orderNum = outTradeNo.getString("orderNum");
                         // 获取订单id
                         Long orderId = outTradeNo.getLong("orderId");
                         // 获取项目名称
                         String name = outTradeNo.getString("name");
-                        // 获取实付金额
-                        String amountPay = outTradeNo.getString("amount_pay");
-                        // 获取应付金额
-                        String amountPayable = outTradeNo.getString("amount_payable");
-                        // 获取支付时间
-                        String timePay = outTradeNo.getString("time_pay");
                         // 获取用户的公众号openid
                         String accountOpenid = outTradeNo.getString("account_openid");
+                        // 查询订单信息
+                        Order order = orderService.getById(orderId);
                         // 保存通知信息
                         orderWechatService.update(Wrappers.<OrderWechat>update()
                                 .set("result_notify", strBuf.toString())
                                 .set("state", WechatAccountInfo.PAY_STATE_SUCCESS)
                                 .eq("order_id", orderId));
                         // 查询微信订单，支付结果
-                        Map<String, Object> orderQueryMap = WechatPayAPICall.orderQuery(orderNum);
+                        Map<String, Object> orderQueryMap = WechatPayAPICall.orderQuery(order.getNumber());
                         if(orderQueryMap.get("trade_state") != null &&
                                 orderQueryMap.get("trade_state").equals(WechatAccountInfo.PAY_STATE_SUCCESS)){
                             // 支付成功，修改用户与项目的关系状态
@@ -130,14 +121,16 @@ public class OrderWechatController extends BaseController {
                                     .eq("id", userProjectId));
                             // 修改状态为已付款
                             orderService.update(Wrappers.<Order>update()
-                                    .set("state", OrderState.ORDER_PAY)
+                                    .set("state", OrderFinals.ORDER_PAY)
                                     .eq("id", orderId));
+                            /*
                             // 发送推送
                             WechatAPICall.sendTemplateMessage(
                                     WechatAccountInfo.DEERCARE_TEMPLATE_PAY_ID,
                                     accountOpenid,null,
                                     "我们已收到您的付款，感谢参与我们的项目","感谢您的支持！",
-                                    name, amountPayable, amountPay, orderNum, timePay);
+                                    name, order.getAmountPayable().toString(), order.getAmountPay().toString(), order.getNumber(), order.getCreateTime().toString());
+                             */
                         }
                     }
                 }).start();

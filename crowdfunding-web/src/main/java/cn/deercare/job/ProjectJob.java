@@ -2,13 +2,12 @@ package cn.deercare.job;
 
 import cn.deercare.controller.ProjectController;
 import cn.deercare.enums.ProjectHotelState;
+import cn.deercare.finals.wechat.WechatAccountInfo;
 import cn.deercare.model.*;
 import cn.deercare.service.*;
 import cn.deercare.utils.ProjectIncomeUtils;
 import cn.deercare.utils.ProjectUtil;
 import cn.deercare.wechat.api.WechatAPICall;
-import cn.deercare.wechat.finals.WechatAccountInfo;
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +19,6 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.*;
 
 @Component

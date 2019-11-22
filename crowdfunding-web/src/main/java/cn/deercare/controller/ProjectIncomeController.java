@@ -12,8 +12,6 @@ import cn.deercare.service.UserWechatService;
 import cn.deercare.utils.ProjectIncomeUtils;
 import cn.deercare.utils.ProjectUtil;
 import cn.deercare.vo.RestResult;
-import cn.deercare.wechat.api.WechatAPICall;
-import cn.deercare.wechat.finals.WechatAccountInfo;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -33,8 +31,6 @@ import cn.deercare.controller.base.BaseController;
 
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.sql.Wrapper;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -104,6 +100,18 @@ public class ProjectIncomeController extends BaseController {
                         .eq("project_id", ph.getProjectId())
                 );
             }
+            logger.info("获取参与该项目的用户");
+            List<User> userList = userService.listByProject(project.getMainId());
+            userList.forEach(user -> {
+                logger.info("开始---计算该用户本项目的今日收益");
+                logger.info("查询用户在该项目中所占比例");
+                BigDecimal proportionAmount = projectService.getProjectProportionByUser(new User(user.getMainId()), project);
+                logger.info("计算本项目获取的收益 总收益*0.5平台占比*本人占比");
+                BigDecimal proIncome = ProjectIncomeUtils.getIncomeByOne(amount,proportionAmount);
+                logger.info("用户本项目今日收益更新到余额");
+                userService.userAmountPlus(proIncome.toString(), user.getMainId());
+                logger.info("结束---计算该用户本项目的今日收益");
+            });
             this.setJson(json, ResultCode.REQ_SUCCESS, "成功");
         }catch (Exception e){
             logger.error(e.toString(), e);
@@ -174,6 +182,12 @@ public class ProjectIncomeController extends BaseController {
                 p.setIncomeProportion(incomeProportion);
                 projectMap.put(p.getMainId(), p);
             });
+            /*
+            // 测试微信付款到零钱
+        String result = WechatPayAPICall.paySmallChange(String.valueOf(new SnowflakeIdWorker(OrderNumberFinal.WORKER_ID, OrderNumberFinal.DATA_CENTER_ID).nextId()),
+                "oWNYK4z5kiLWHy3B3LIVCwO2iouk", AmountUtils.changeY2F("1"),"提现");
+        System.out.println(result);
+             */
             json.put("data", projectMap.values());
         }catch (Exception e){
             this.setJson(json, "错误--项目收益网页推送");

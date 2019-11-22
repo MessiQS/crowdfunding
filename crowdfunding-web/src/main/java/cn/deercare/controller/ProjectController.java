@@ -4,6 +4,7 @@ package cn.deercare.controller;
 import cn.deercare.annotation.Authorization;
 import cn.deercare.common.ResultCode;
 import cn.deercare.enums.ProjectHotelState;
+import cn.deercare.finals.wechat.WechatAccountInfo;
 import cn.deercare.model.ProjectHotel;
 import cn.deercare.model.User;
 import cn.deercare.model.UserWechat;
@@ -14,8 +15,6 @@ import cn.deercare.utils.SpringUtil;
 import cn.deercare.utils.UserUtil;
 import cn.deercare.vo.RestResult;
 import cn.deercare.wechat.api.WechatAPICall;
-import cn.deercare.wechat.finals.WechatAccountInfo;
-import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.github.pagehelper.PageHelper;
 import io.swagger.annotations.*;
@@ -28,7 +27,6 @@ import cn.deercare.controller.base.BaseController;
 import cn.deercare.service.ProjectService;
 
 import javax.servlet.http.HttpServletRequest;
-import java.text.MessageFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -177,6 +175,7 @@ public class ProjectController extends BaseController {
                 String stateChangeTitle = "您参与的项目状态已经发生改变";
                 String create = "小鹿健康";
                 // 根据状态发送推送
+                /*
                 switch (nextProjectHotelSate){
                     case S:
                         // 创建时间转日期格式
@@ -218,6 +217,7 @@ public class ProjectController extends BaseController {
                                 stateChangeTitle,"",projectHotel.getName(), create, "正式运营", "无");
                         break;
                 }
+                 */
                 /*
                 if(nextProjectHotelSate == P){
                     // 发送工厂生产推送

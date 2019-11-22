@@ -1,10 +1,12 @@
 package cn.deercare.controller;
 
 
+import cn.deercare.annotation.Authorization;
 import cn.deercare.common.ResultCode;
 import cn.deercare.enums.UserType;
-import cn.deercare.finals.OrderState;
-import cn.deercare.finals.WechatPayVerification;
+import cn.deercare.finals.OrderFinals;
+import cn.deercare.finals.wechat.WechatAccountInfo;
+import cn.deercare.finals.wechat.WechatPayVerification;
 import cn.deercare.model.*;
 import cn.deercare.service.*;
 import cn.deercare.utils.TokenUtils;
@@ -12,22 +14,19 @@ import cn.deercare.utils.UserUtil;
 import cn.deercare.vo.RestResult;
 import cn.deercare.wechat.api.WechatAPICall;
 import cn.deercare.wechat.api.WechatPayAPICall;
-import cn.deercare.wechat.finals.WechatAccountInfo;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import cn.deercare.controller.base.BaseController;
-import sun.rmi.server.WeakClassHashMap;
+import springfox.documentation.annotations.ApiIgnore;
 
+import javax.servlet.http.HttpServletRequest;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
@@ -58,6 +57,53 @@ public class UserController extends BaseController {
     private OrderService orderService;
     @Autowired
     private OrderWechatService orderWechatService;
+
+    private static final Integer PAY_SMALL_CHANGE_MAX_AMOUNT = 5000;
+    private static final Integer PAY_SMALL_CHANGE_MIN_AMOUNT = 1;
+    // 上次调用提现接口时间
+    private static final LocalDateTime lastRunTime =  null;
+
+    /**
+     * 用户提现操作
+     * @param request
+     * @return
+     */
+    @GetMapping("/cash/{amount}")
+    @ApiOperation(value = "提现操作", notes = "{}", response = RestResult.class)
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType="path", name = "amount", value = "提现金额", example = "1000",required = true, dataTypeClass = String.class)
+    })
+    @Authorization
+    public Object withdrawCash(@ApiIgnore HttpServletRequest request,
+                       @PathVariable("amount") BigDecimal amount) {
+        Map<String , Object> json = createJson();
+        logBefore(logger, "用户提现操作");
+        try {
+            logger.info("判断提现金额是否在微信允许的范围内");
+            if(amount.doubleValue() > PAY_SMALL_CHANGE_MAX_AMOUNT ||
+                amount.doubleValue() < PAY_SMALL_CHANGE_MIN_AMOUNT){
+                this.setJson(json, ResultCode.REQ_FAIL, "提现金额不在微信允许的范围内");
+                return json;
+            }
+            logger.info("获取用户信息");
+            UserWechat userWechat = UserUtil.getUser(request);
+            logger.info("判断用户本次提现金额是否充足");
+            if(userWechat.getAmount().doubleValue() < amount.doubleValue()){
+                this.setJson(json, ResultCode.REQ_FAIL, "可提现金额不足");
+                return json;
+            }
+            // 提现操作
+            userService.userWithdrawCash(userWechat, amount);
+            this.setJson(json, ResultCode.REQ_SUCCESS, "成功");
+            return json;
+        }catch (Exception e){
+            logger.error(e.toString(), e);
+            this.setJson(json, ResultCode.REQ_FAIL, "失败");
+        }finally {
+            logAfter(logger, json);
+        }
+        return json;
+    }
 
     /**
      * 登录操作
@@ -174,7 +220,7 @@ public class UserController extends BaseController {
                         .eq("order_id",order.getId()));
                 // 修改订单状态为已付款
                 orderService.update(Wrappers.<Order>update()
-                        .set("state", OrderState.ORDER_PAY)
+                        .set("state", OrderFinals.ORDER_PAY)
                         .eq("id", order.getId()));
                 // 修改微信订单状态为支付成功
                 orderWechatService.update(Wrappers.<OrderWechat>update()
@@ -187,7 +233,7 @@ public class UserController extends BaseController {
                         .eq("order_id",order.getId()));
                 // 修改订单状态为关闭
                 orderService.update(Wrappers.<Order>update()
-                        .set("state", OrderState.ORDER_CLOSE)
+                        .set("state", OrderFinals.ORDER_CLOSE)
                         .eq("id", order.getId()));
                 // 不修改微信订单状态
             }

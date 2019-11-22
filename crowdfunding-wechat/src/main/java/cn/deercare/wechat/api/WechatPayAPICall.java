@@ -1,34 +1,19 @@
 package cn.deercare.wechat.api;
 
+import cn.deercare.finals.wechat.WechatAccountInfo;
+import cn.deercare.finals.wechat.WechatIFSInfo;
 import cn.deercare.over.RestTemplate;
 import cn.deercare.utils.StringUtil;
-import cn.deercare.wechat.finals.WechatAccountInfo;
-import cn.deercare.wechat.finals.WechatIFSInfo;
 import com.alibaba.druid.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.conn.ssl.SSLContexts;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
-import org.dom4j.DocumentException;
-import org.dom4j.DocumentHelper;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
-import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.util.DigestUtils;
 
 
-import javax.net.ssl.SSLContext;
-import javax.sound.midi.Soundbank;
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.security.*;
 import java.security.cert.CertificateException;
 import java.text.SimpleDateFormat;
@@ -190,6 +175,11 @@ public class WechatPayAPICall {
                 );
     }
 
+    /**
+     * 向微信查询订单信息
+     * @param order 订单号
+     * @return
+     */
     public static Map<String, Object> orderQuery(String order){
         SortedMap<String, Object> parMap = new TreeMap<String, Object>();
         // appid
@@ -211,6 +201,65 @@ public class WechatPayAPICall {
         return StringUtil.xmlToArray(result);
         // return JSONObject.parseObject(result);
     }
+
+    /**
+     * 付款到零钱
+     * @param orderNum 订单号
+     * @param openId 小程序openId
+     * @param amount 付款金额（分）
+     * @param desc 备注
+     * @return
+     */
+    public static synchronized List<Object> paySmallChange(String orderNum, String openId, String amount, String desc){
+        SortedMap<String, Object> parMap = new TreeMap<String, Object>();
+
+        parMap.put("mch_appid", WechatAccountInfo.DEERCARE_PROGRAM_APP_ID);
+        // 商户号
+        parMap.put("mchid", WechatAccountInfo.PAY_MERCHANT);
+        parMap.put("nonce_str", StringUtil.createNoncestr());
+        parMap.put("partner_trade_no", orderNum);
+        parMap.put("openid", openId);
+        parMap.put("check_name", WechatAccountInfo.PAY_SMALL_CHANGE_CHECK_NAME);
+        parMap.put("amount", amount);
+        parMap.put("desc", desc);
+        parMap.put("spbill_create_ip", "127.0.0.1");
+        parMap.put("sign", getSign(parMap));
+        System.out.println(parMap.toString());
+        String xml = StringUtil.arrayToXml(parMap);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
+        HttpEntity<String> entity = new HttpEntity<String>(xml, headers);
+        // 发起请求获取结果
+        RestTemplate restTemplate = (RestTemplate) RestTemplate.getRestTemplateByWechat();
+        ResponseEntity<String> responseEntity = restTemplate.postForEntity(WechatIFSInfo.POST_PAY_SMALL_CHANGE, entity, String.class);
+        String result = responseEntity.getBody();
+        return Arrays.asList(
+                xml, // 请求参数
+                result // 返回结果
+        );
+    }
+
+    public static List<Object> paySmallChangeQuery(String orderNum){
+        SortedMap<String, Object> parMap = new TreeMap<String, Object>();
+        parMap.put("nonce_str", StringUtil.createNoncestr());
+        parMap.put("partner_trade_no", orderNum);
+        parMap.put("mch_id", WechatAccountInfo.PAY_MERCHANT); // 商户号
+        parMap.put("appid", WechatAccountInfo.DEERCARE_PROGRAM_APP_ID);
+        parMap.put("sign", getSign(parMap));
+        System.out.println(parMap.toString());
+        String xml = StringUtil.arrayToXml(parMap);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
+        HttpEntity<String> entity = new HttpEntity<String>(xml, headers);
+        // 发起请求获取结果
+        RestTemplate restTemplate = (RestTemplate) RestTemplate.getRestTemplateByWechat();
+        ResponseEntity<String> responseEntity = restTemplate.postForEntity(WechatIFSInfo.POST_SMALL_CHANGE, entity, String.class);
+        String result = responseEntity.getBody();
+        return Arrays.asList(
+                xml, // 请求参数
+                result // 返回结果
+        );
+    }
 /*
 
     <xml><return_code><![CDATA[SUCCESS]]></return_code>
@@ -226,28 +275,34 @@ public class WechatPayAPICall {
 </xml>
 */
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws KeyStoreException, IOException, CertificateException, NoSuchAlgorithmException, UnrecoverableKeyException, KeyManagementException {
+
+
+        RestTemplate restTemplate = (RestTemplate) RestTemplate.getRestTemplateByWechat();
+
         SortedMap<String, Object> parMap = new TreeMap<String, Object>();
-        System.out.println(Calendar.getInstance().getTimeInMillis() / 1000);
-        parMap.put("appid", WechatAccountInfo.DEERCARE_PROGRAM_APP_ID);
+
+        parMap.put("mch_appid", WechatAccountInfo.DEERCARE_PROGRAM_APP_ID);
         // 商户号
-        parMap.put("mch_id", WechatAccountInfo.PAY_MERCHANT);
-        parMap.put("out_trade_no", "631970807387521024");
+        parMap.put("mchid", WechatAccountInfo.PAY_MERCHANT);
         parMap.put("nonce_str", StringUtil.createNoncestr());
-        parMap.put("sign_type", PAY_SIGN_TYPE);
+        parMap.put("partner_trade_no", "631970807387521024");
+        parMap.put("openid", "oWNYK42F7FaCi739Vl5ygVAiHxeM");
+        parMap.put("check_name", "NO_CHECK");
+        parMap.put("amount", "100");
+        parMap.put("desc", "提现");
+        parMap.put("spbill_create_ip", "203.156.236.90");
         parMap.put("sign", getSign(parMap));
         System.out.println(parMap.toString());
         String xml = StringUtil.arrayToXml(parMap);
-        RestTemplate restTemplate = new RestTemplate();
-        restTemplate.getMessageConverters().set(1, new StringHttpMessageConverter(StandardCharsets.UTF_8));
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
         HttpEntity<String> entity = new HttpEntity<String>(xml, headers);
-        System.out.println("------");
         // 发起请求获取结果
-        ResponseEntity<String> responseEntity = restTemplate.postForEntity(WechatIFSInfo.POST_PAY_ORDER_QUERY, entity, String.class);
+        ResponseEntity<String> responseEntity = restTemplate.postForEntity(WechatIFSInfo.POST_PAY_SMALL_CHANGE, entity, String.class);
         String result = responseEntity.getBody();
         System.out.println(result);
-        System.out.println("0----------------");
+
+
     }
 }

@@ -1,9 +1,8 @@
 package cn.deercare.model;
 
-import cn.deercare.finals.WechatPayVerification;
+import cn.deercare.finals.wechat.WechatPayVerification;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
-import cn.deercare.model.BaseModel;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import lombok.Data;

@@ -1,4 +1,0 @@
-2019-10-13 17:05:14.415 WARN  --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:44  - No MyBatis mapper was found in '[com.deercare.mapper]' package. Please check your configuration.
-2019-10-13 17:25:35.394 WARN  --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:44  - No MyBatis mapper was found in '[com.deercare.mapper]' package. Please check your configuration.
-2019-10-13 17:28:42.004 WARN  --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:44  - No MyBatis mapper was found in '[com.deercare.mapper]' package. Please check your configuration.
-2019-10-13 17:34:05.345 WARN  --- [main] org.mybatis.spring.mapper.ClassPathMapperScanner Line:44  - No MyBatis mapper was found in '[com.deercare.mapper]' package. Please check your configuration.

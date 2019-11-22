@@ -132,14 +132,17 @@ public class UserWechat extends User {
         super.setId(null);
         super.setType(null);
         super.setToken(null);
+        super.setAmount(null);
         super.setCreateTime(null);
         super.setUpdateTime(null);
+
     }
 
     public void setUser (User user){
         super.setId(user.getId());
         super.setType(user.getType());
         super.setToken(user.getToken());
+        super.setAmount(user.getAmount());
         super.setCreateTime(user.getCreateTime());
         super.setUpdateTime(user.getUpdateTime());
     }
