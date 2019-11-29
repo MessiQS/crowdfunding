@@ -42,7 +42,7 @@ public class ProjectServiceImpl<T extends Project> extends ServiceImpl<ProjectMa
 
     @Override
     public List<T> listDetailedByUser(User user) {
-        List<T> list = getListDetailed(projectMapper.listByUser(user));
+        List<T> list = getListDetailed(projectMapper.listJustByUser(user));
         // 循环获取每个项目的参与细节
         list.forEach(obj -> {
             List<UserProject> userProjectList = userProjectMapper.selectList(new QueryWrapper<UserProject>()

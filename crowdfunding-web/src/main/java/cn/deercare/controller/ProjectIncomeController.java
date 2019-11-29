@@ -11,7 +11,11 @@ import cn.deercare.service.UserService;
 import cn.deercare.service.UserWechatService;
 import cn.deercare.utils.ProjectIncomeUtils;
 import cn.deercare.utils.ProjectUtil;
+import cn.deercare.utils.StringUtil;
+import cn.deercare.utils.UserUtil;
 import cn.deercare.vo.RestResult;
+import com.alibaba.druid.util.StringUtils;
+import com.baomidou.mybatisplus.core.toolkit.ArrayUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -28,12 +32,15 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.Api;
 
 import cn.deercare.controller.base.BaseController;
+import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -122,36 +129,88 @@ public class ProjectIncomeController extends BaseController {
         return json;
     }
 
-    @GetMapping("detailed/{openId}/{date}")
-    @ApiOperation(value = "个人项目收益详细", notes = "", response = RestResult.class)
+    @GetMapping("history")
+    @ApiOperation(value = "个人历史收益", notes = "主要字段：historyIncome（项目总收益)，historyIncomeProportion（项目总平均收益率）。----前端取每个项目的收益数据，计算出所有项目的总收益数据", response = RestResult.class)
+    public Object projectIncomeHistory(@ApiIgnore  HttpServletRequest request){
+        Map<String, Object> json = createJson();
+        logBefore(logger, "个人历史收益");
+        try{
+            // 用户参与项目的id集合
+            List<Long> projectIdList = new ArrayList<Long>();
+            logger.info("获取用户信息");
+            UserWechat userWechat = UserUtil.getUser(request);
+            logger.info("查询用户参与的项目");
+            List<Project> projectList = projectService.listDetailedByUser((User)userWechat);
+            if(projectList == null || projectList.size() == 0){
+                this.setJson(json, "用户没参与任何项目，所有数值均为0");
+                return json;
+            }
+            projectList.forEach(p ->{projectIdList.add(p.getMainId());});
+
+            logger.info("用户参与的项目转map");
+            // userlist.stream().collect(Collectors.toMap(User::getAge,User::getName))
+            Map<Long, Project> projectMap = projectList.stream().collect(Collectors.toMap(Project::getMainId, Project -> Project));
+            logger.info("查询项目用户参与的项目历史收益");
+            List<ProjectIncome> projectIncomeList = projectIncomeService.list(Wrappers.<ProjectIncome>query()
+                    .in("project_id", projectIdList));
+            logger.info("计算出用户每个项目的历史收益");
+            projectIdList.forEach(str ->{
+                Project p = projectMap.get(str);
+                logger.info("查询项目历史的收益总和");
+                BigDecimal projectHistoryIncome = projectIncomeService.getProjectIncomeHistory(p.getMainId(), new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
+                logger.info("查询用户在该项目中所占比例");
+                BigDecimal proportionAmount = projectService.getProjectProportionByUser(new User(userWechat.getUserId()), p);
+                logger.info("计算个人项目历史的收益总和 总收益*0.5平台占比*本人占比");
+                BigDecimal historyIncome = ProjectIncomeUtils.getIncomeByOne(projectHistoryIncome, proportionAmount);
+                p.setHistoryIncome(historyIncome);
+                logger.info("查询用户在该项目中的投资本金");
+                BigDecimal principal = projectService.getProjectPrincipalByUser(new User(userWechat.getUserId()), p);
+                logger.info("计算历史平均收益率，历史收益/本金*100");
+                BigDecimal incomeProportion = ProjectIncomeUtils.getIncomeProportionByOne(historyIncome, principal);
+                p.setHistoryIncomeProportion(incomeProportion);
+                projectMap.put(p.getMainId(), p);
+            });
+            json.put("data", projectMap.values());
+            this.setJson(json, ResultCode.REQ_SUCCESS, "成功");
+        }catch (Exception e){
+            this.setJson(json, "错误--个人历史收益");
+            logger.error(e.toString(), e);
+        }finally {
+            logAfter(logger, json);
+        }
+        return json;
+    }
+
+    @GetMapping("Daily/{date}")
+    @ApiOperation(value = "日收益", notes = "主要字段：income（当日收益）", response = RestResult.class)
     @ApiImplicitParams({
-            @ApiImplicitParam(paramType="path", name = "openId", value = "用户openId", required = true, dataTypeClass = String.class),
             @ApiImplicitParam(paramType="path", name = "date", value = "收益日期", required = true, dataTypeClass = String.class),
     })
     @Authorization
-    public Object projectIncomeDetailedByOne(@PathVariable("openId") String openId, @PathVariable("date")String date,
-                                   HttpServletRequest request){
+    public Object projectIncomeDetailedByOne(@PathVariable("date")String date,
+                                  @ApiIgnore HttpServletRequest request){
         Map<String, Object> json = createJson();
         logBefore(logger, "项目收益网页推送");
         try {
             // 用户参与项目的id集合
             List<Long> projectIdList = new ArrayList<Long>();
-            // 用户今日收益
+            // 获取用户信息
             BigDecimal income = new BigDecimal(0);
             // 我们自己投的话，酒店给3，我们7
             // 众筹的话，投资人5，酒店3，我们2
             // 你说的那个5应该是，提交酒店资源的，给5个点，是5%
-            logger.info("查询微信用户信息");
-            UserWechat userWechat = userWechatService.getOne(Wrappers.<UserWechat>query()
-                    .eq("account_openid", openId)
-                    .select("*"));
+            logger.info("获取用户信息");
+            UserWechat userWechat = UserUtil.getUser(request);
             if(null == userWechat){
                 this.setJson(json, "错误--没查询到用户");
                 return json;
             }
             logger.info("查询用户参与的项目");
             List<Project> projectList = projectService.listDetailedByUser((User)userWechat);
-
+            if(projectList == null || projectList.size() == 0){
+                this.setJson(json, "用户没参与任何项目，所有数值均为0");
+                return json;
+            }
             projectList.forEach(p ->{projectIdList.add(p.getMainId());});
 
             logger.info("用户参与的项目转map");
@@ -161,9 +220,9 @@ public class ProjectIncomeController extends BaseController {
             List<ProjectIncome> projectIncomeList = projectIncomeService.list(Wrappers.<ProjectIncome>query()
                     .in("project_id", projectIdList)
                     .eq("date", date));
-            logger.info("计算出用户今日收益");
+            logger.info("计算出用户历史收益");
             projectIncomeList.forEach(projectIncome -> {
-                logger.info("获取项目今日收益");
+                logger.info("获取项目日收益");
                 BigDecimal amount = projectIncome.getAmount();
                 logger.info("查询用户在该项目中所占比例");
                 Project p = projectMap.get(projectIncome.getProjectId());
@@ -171,15 +230,7 @@ public class ProjectIncomeController extends BaseController {
                 logger.info("计算本项目获取的收益 总收益*0.5平台占比*本人占比");
                 BigDecimal proIncome = ProjectIncomeUtils.getIncomeByOne(amount,proportionAmount);
                 p.setIncome(proIncome);
-                logger.info("查询项目历史的收益总和");
-                BigDecimal projectHistoryIncome = projectIncomeService.getProjectIncomeHistory(p.getMainId(), date.toString());
-                logger.info("计算个人项目历史的收益总和");
-                BigDecimal historyIncome = ProjectIncomeUtils.getIncomeByOne(projectHistoryIncome, proportionAmount);
-                logger.info("查询用户在该项目中的投资本金");
-                BigDecimal principal = projectService.getProjectPrincipalByUser(new User(userWechat.getUserId()), p);
-                logger.info("计算历史平均收益率，历史收益/本金*100");
-                BigDecimal incomeProportion = ProjectIncomeUtils.getIncomeProportionByOne(historyIncome, principal);
-                p.setIncomeProportion(incomeProportion);
+                // 添加进map
                 projectMap.put(p.getMainId(), p);
             });
             /*
@@ -189,12 +240,14 @@ public class ProjectIncomeController extends BaseController {
         System.out.println(result);
              */
             json.put("data", projectMap.values());
+            this.setJson(json, ResultCode.REQ_SUCCESS, "成功");
         }catch (Exception e){
             this.setJson(json, "错误--项目收益网页推送");
             logger.error(e.toString(), e);
         }finally {
-            return json;
+            logAfter(logger, json);
         }
+        return json;
     }
 
     public static void main(String[] args) {

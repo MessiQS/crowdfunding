@@ -72,16 +72,21 @@ public class Project extends BaseModel {
     @TableField(exist = false)
     private Integer personCount;
     /**
-     * 今日收益（计算后，个人的收益）
+     * 日收益（计算后，个人的收益）
      */
     @TableField(exist = false)
     private BigDecimal income;
+    /**
+     * 历史收益（计算后，个人的收益）
+     */
+    @TableField(exist = false)
+    private BigDecimal historyIncome;
 
     /**
      * 历史收益率
      */
     @TableField(exist = false)
-    private BigDecimal incomeProportion;
+    private BigDecimal historyIncomeProportion;
 
 
 }

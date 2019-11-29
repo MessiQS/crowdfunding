@@ -28,8 +28,18 @@ public interface ProjectMapper extends BaseMapper<Project> {
             "INNER JOIN t_project_payment tpp on tpp.id = tp.payment_id " +
             "INNER JOIN t_user_project tup on tup.project_id = tp.id " +
             "INNER JOIN t_user tu on tup.user_id = tu.id " +
-            "where tu.id = #{id} and tup.verification = 2")
+            "where tu.id = #{mainId} and tup.verification = 2")
     List<Project> listByUser(User user);
+
+    /**
+     * 查询用户参与的项目
+     * @param user
+     * @return
+     */
+    @Select("select DISTINCT(tp.id),tp.* from t_project tp " +
+            "INNER JOIN t_user_project tup on tup.project_id = tp.id " +
+            "where tup.user_id = #{mainId}")
+    List<Project> listJustByUser(User user);
 
     /**
      * 查询项目已筹集金额
