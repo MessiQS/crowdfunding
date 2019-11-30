@@ -24,7 +24,7 @@ public interface ProjectIncomeMapper extends BaseMapper<ProjectIncome> {
      * @return
      */
     @Select("select ifnull(sum(tpi.amount), 0) as 'amount' from t_project_income tpi " +
-            "where tpi.project_id = #{id} and date <= #{date}")
+            "where tpi.project_id = #{id} and tpi.date <= #{date}")
     BigDecimal getProjectIncomeHistory(Serializable id, String date);
 
 }
