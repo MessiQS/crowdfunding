@@ -181,7 +181,7 @@ public class ProjectIncomeController extends BaseController {
         return json;
     }
 
-    @GetMapping("Daily/{date}")
+    @GetMapping("daily/{date}")
     @ApiOperation(value = "日收益", notes = "主要字段：income（当日收益）", response = RestResult.class)
     @ApiImplicitParams({
             @ApiImplicitParam(paramType="path", name = "date", value = "收益日期", required = true, dataTypeClass = String.class),
