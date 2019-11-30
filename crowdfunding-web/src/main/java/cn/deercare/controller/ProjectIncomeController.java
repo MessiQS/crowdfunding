@@ -218,7 +218,10 @@ public class ProjectIncomeController extends BaseController {
                 this.setJson(json, "用户没参与任何项目，所有数值均为0");
                 return json;
             }
-            projectList.forEach(p ->{projectIdList.add(p.getMainId());});
+            projectList.forEach(p ->{
+                projectIdList.add(p.getMainId());
+                p.setIncome(new BigDecimal(0));
+            });
 
             logger.info("用户参与的项目转map");
             // userlist.stream().collect(Collectors.toMap(User::getAge,User::getName))
