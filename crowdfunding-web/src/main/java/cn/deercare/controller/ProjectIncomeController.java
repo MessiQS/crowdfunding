@@ -20,6 +20,7 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.apache.logging.log4j.message.StringFormattedMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -164,6 +165,11 @@ public class ProjectIncomeController extends BaseController {
                 logger.info("计算个人项目历史的收益总和 总收益*0.5平台占比*本人占比");
                 BigDecimal historyIncome = ProjectIncomeUtils.getIncomeByOne(projectHistoryIncome, proportionAmount);
                 p.setHistoryIncome(historyIncome);
+                if(historyIncome.compareTo(BigDecimal.ZERO)==0){
+                    logger.info("个人收益总和为0，则历史平均收益率为0");
+                    p.setHistoryIncomeProportion(new BigDecimal(0));
+                    return;
+                }
                 logger.info("查询用户在该项目中的投资本金");
                 BigDecimal principal = projectService.getProjectPrincipalByUser(new User(userWechat.getUserId()), p);
                 logger.info("计算历史平均收益率，历史收益/本金*100");
@@ -252,11 +258,15 @@ public class ProjectIncomeController extends BaseController {
     }
 
     public static void main(String[] args) {
+
+        BigDecimal historyIncome = ProjectIncomeUtils.getIncomeByOne(new BigDecimal(0), new BigDecimal(15));
+        System.out.println(historyIncome.compareTo(BigDecimal.ZERO)==0);
+        /*
         BigDecimal b1 = new BigDecimal(10);
         BigDecimal b2 = new BigDecimal(3.827);
         System.out.println(b1.divide(b2, 6, ROUND_HALF_UP).doubleValue());
         System.out.println(b1.divide(b2, 20, ROUND_HALF_UP).doubleValue());
-
+*/
         /*
         BigDecimal historyIncome = projectHistoryIncome.multiply(cn.deercare.finals.ProjectIncome.PLATFORM_PROPORTION)
                         .multiply(proportionAmount.multiply(new BigDecimal(0.01)));
