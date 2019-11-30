@@ -152,7 +152,8 @@ public class ProjectIncomeController extends BaseController {
             Map<Long, Project> projectMap = projectList.stream().collect(Collectors.toMap(Project::getMainId, Project -> Project));
             logger.info("查询项目用户参与的项目历史收益");
             List<ProjectIncome> projectIncomeList = projectIncomeService.list(Wrappers.<ProjectIncome>query()
-                    .in("project_id", projectIdList));
+                    .in("project_id", projectIdList)
+                    .select("*"));
             logger.info("计算出用户每个项目的历史收益");
             projectIdList.forEach(str ->{
                 Project p = projectMap.get(str);
