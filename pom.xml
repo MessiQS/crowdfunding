@@ -18,7 +18,7 @@
     <properties>
         <durid>1.1.18</durid>
         <common.lang>3.4</common.lang>
-        <mysql>8.0.16</mysql>
+        <mysql>8.0.28</mysql>
         <mybatis.plus>3.2.0</mybatis.plus>
         <mybatis.pagehelper>4.1.4</mybatis.pagehelper>
         <janino>3.0.6</janino>
